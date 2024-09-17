@@ -1,0 +1,27 @@
+.nav-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    width: 240px;
+    height: 50px;
+    background: rgb(85, 84, 84);
+    gap: 15px;
+}
+
+.nav-links{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 8px;
+    
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    vertical-align: middle;
+}
