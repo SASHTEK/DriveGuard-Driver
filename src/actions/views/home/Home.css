@@ -23,7 +23,7 @@
 }
 
 .offense-status-level{
-    background: rgb(42, 26, 224);
+    Background: rgb(42, 26, 224);
     width: 40px;
     height: 40px;
     display: flex;
@@ -41,8 +41,19 @@
 }
 
 .user-recommendation-message{
-    background: green;
+    background: rgb(236, 236, 236);
     width: auto;
+    text-align: center;
+    color: green;
+}
+
+.user-recommendation-comment{
+    Background: rgb(15, 107, 6);
+    width: auto;
+    height: 60px;
+    color: white;
+    font-size: 18px;
+    padding: 10px 10px;
     text-align: center;
 }
 
