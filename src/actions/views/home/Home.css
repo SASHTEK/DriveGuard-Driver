@@ -10,35 +10,18 @@
     border-top-right-radius: 7px;
 }
 
+.offense-status{
+    margin-top: 10px;
+}
+
 .user-recommendation{
-    background: transparent;
-    width: 90%;
-    height: 100px;
-    margin: auto;
+    margin-top: 10px;
 }
 
-.user-recommendation-message{
-    background: rgb(240, 236, 236);
-    width: auto;
-    height: 25px;
-    text-align: center;
-    color: green;
-    font-weight: 500px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+.offense-summary-container{
+    margin-top: 10px;
 }
 
-.user-recommendation-comment{
-    Background: rgb(15, 107, 6);
-    width: auto;
-    height: 60px;
-    color: white;
-    font-size: 18px;
-    padding: 10px 10px;
-    text-align: center;
+.offense-acceptance{
+    margin-top: 10px;
 }
-
-
-
-
-
