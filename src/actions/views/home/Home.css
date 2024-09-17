@@ -6,45 +6,26 @@
     justify-content: center;
     align-items: center;
     color: white;
-}
-
-.offense-status{
-    background: rgb(141, 140, 151);
-    width: auto;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.offense-status-text{
-    color: white;
-}
-
-.offense-status-level{
-    Background: rgb(42, 26, 224);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border-radius: 50%;
-    font-size: 18px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 .user-recommendation{
-    background: rgb(42, 26, 224);
-    width: auto;
+    background: transparent;
+    width: 90%;
     height: 100px;
+    margin: auto;
 }
 
 .user-recommendation-message{
-    background: rgb(236, 236, 236);
+    background: rgb(240, 236, 236);
     width: auto;
+    height: 25px;
     text-align: center;
     color: green;
+    font-weight: 500px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .user-recommendation-comment{
@@ -56,6 +37,8 @@
     padding: 10px 10px;
     text-align: center;
 }
+
+
 
 
 

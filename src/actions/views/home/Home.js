@@ -1,6 +1,7 @@
 import TabNavigation from '../../components/navbar/TabNavigation';
 import './Home.css';
 import '../../styles/General.css';
+import CounterBox from '../../components/objects/CounterBox/CounterBox';
 
 const Home = () => {
     return ( 
@@ -10,8 +11,7 @@ const Home = () => {
             </div>
 
             <div className='offense-status'>
-                <div className='offense-status-text'>Offense Level</div>
-                <div className='offense-status-level'>2</div>
+            <CounterBox text={'Offense Level'} number={2} />
             </div>
 
             <div className='user-recommendation'>
@@ -22,8 +22,7 @@ const Home = () => {
             <div className='offense-summary-container'>
 
                 <div className='offense-acceptance'>
-                    <div className='offense-acceptance-label'>Not Responded Offense acceptances</div>
-                    <div className='offense-acceptance-count'>2</div>
+                    <CounterBox text={'Not Responded'} number={2} />
                 </div>
 
                 <div className='offense-summary'>
