@@ -1,69 +1,66 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 50px;
-    background: rgb(206, 205, 205);
-    padding-bottom: 30px;
-    width: 350px;
-    border-radius: 7px;
-}
-
 .title{
-    height: 75px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: rgb(38, 22, 131);
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
 
-.header{
+.tab-container{
     display: flex;
-    flex-direction: column;
+    gap: 15px;
+    margin: 30px auto;
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 5px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.text{
-    font-size: 25px;
+    width: 100px;
+    height: 40px;
+    color: aliceblue;
+    background: rgb(38, 22, 131);
+    border-radius: 7px;
+    font-size: 18px;
     font-weight: 500;
+    cursor: pointer;
 }
 
-.underline{
-    width: 50px;
-    height: 4px;
-    background: rgb(226, 51, 51);
-    border-radius: 10px;
+.tab:hover{
+    border: 2px solid rgb(121, 117, 117);
+}
+
+.gray{
+    background: rgb(196, 195, 195);
+    color: gray;
 }
 
 .inputs{
-    margin-top: 35px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .input{
     display: flex;
     align-items: center;
     margin: auto;
-    width: 300px;
-    height: 50px;
+    width: 225px;
+    height: 40px;
     background: rgb(245, 243, 243);
     border-radius: 6px;
 }
 
 .input input{
     margin-left: 15px;
-    height: 40px;
-    width: 250px;
+    height: 35px;
+    width: 200px;
     background:transparent;
     border: none;
     outline:none;
@@ -71,7 +68,7 @@
 }
 
 .forgot-password{
-    margin-top: 10px;
+    margin-top: 15px;
     color: rgb(92, 95, 95);
     font-size: 15px;
     text-align: center;
@@ -84,32 +81,24 @@
 
 .submit-container{
     display: flex;
-    gap: 15px;
-    margin: 35px auto;
+    margin: 25px auto;
 }
 
 .submit{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 140px;
-    height: 50px;
+    width: 200px;
+    height: 40px;
     color: aliceblue;
-    background: rgb(38, 22, 131);
-    border-radius: 50px;
-    font-size: 19px;
-    font-weight: 700;
+    background: rgb(3, 172, 54);
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
     cursor: pointer;
+    border-color: rgb(188, 194, 188);
 }
 
 .submit:hover{
-    background: rgb(38, 25, 102);
-    color: white;
+    background: green;
 }
-
-.gray{
-    background: rgb(196, 195, 195);
-    color: gray;
-}
-
-
