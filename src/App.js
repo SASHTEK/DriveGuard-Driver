@@ -1,11 +1,11 @@
-import TabNavigation from './actions/components/navbar/TabNavigation';
-import Home from './actions/views/home/Home';
+
+import loginSignup from './actions/components/auth/LoginSignup';
 function App() {
   return (
     <div className="App">
       <div className="content">
-        <Home/>
-        <TabNavigation/>
+        <loginSignup/>
+        
       </div>
     </div>
   );
