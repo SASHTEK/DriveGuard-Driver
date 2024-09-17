@@ -7,20 +7,19 @@ const TabNavigation = () => {
     return (  
         <div className='nav-container'>
             <div className="nav-links">
-                <img src={navTabHome} alt="Home tab buttion" />
-                <a href="./actions/views/home/Home">Home</a>
+                <a href="./actions/views/home/Home"><img src={navTabHome} alt="Home tab buttion"/>Home</a>
             </div>
+
             <div className="nav-links">
-                <img src={navTabNew} alt="New alert tab buttion" />
-                <a href="./actions/views/new/New">Alerts</a>
+                <a href="./actions/views/new/New"><img src={navTabNew} alt="New alert tab buttion"/>Alerts</a>
             </div>
+
             <div className="nav-links">
-                <img src={navTabHistory} alt="History tab buttion" />
-                <a href="./actions/views/history/History">History</a>
+                <a href="./actions/views/history/History"><img src={navTabHistory} alt="History tab buttion"/>History</a>
             </div>
+            
             <div className="nav-links">
-                <img src={navTabSettings} alt="Settings tab buttion" />
-                <a href="./actions/views/settings/Settings">Settings</a>
+                <a href="./actions/views/settings/Settings"><img src={navTabSettings} alt="Settings tab buttion"/>Settings</a>
             </div>
         </div>
     );
