@@ -1,29 +1,40 @@
+import { useState } from 'react';
 import './LoginSignup.css'; 
-const loginSignup = () => {
+const LoginSignup = () => {
+
+    const [action,setAction] = useState("Login");
+
     return ( 
         <div className='container'>
+            <div className='title'>DriveGuard</div>
             <div className='header'>
-                <div className='text'>SignUp</div>
+                <div className='text'>{action}</div>
                 <div className='underline'></div>
             </div>
+
             <div className='inputs'>
                 <div className='input'>
-                    <input type='text'/>
+                    <input type='text' placeholder='Username'/>
                 </div>
+                {action==="Login"?<div></div>:<div className='input'>
+                    <input type='text' placeholder='Driving License Number'/>
+                </div>}
+                
                 <div className='input'>
-                    <input type='text'/>
-                </div>
-                <div className='input'>
-                    <input type='password'/>
+                    <input type='password' placeholder='Password'/>
                 </div>
             </div>
-            <div className='forgot-password'>Lost Password? <span>Click Here</span></div>
+            
+            {action==="Sign Up"?<div></div>:<div className='forgot-password'>Lost Password? <span>Click Here</span></div>}
+
             <div className='submit-container'>
-                <div className='submit'>Sign Up</div>
-                <div className='submit'>Login</div>
+                {/* <div className={action==="Login"?"submit gray":"submit"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div> */}
+                <div className={action==="Sign Up"?"submit gray":"submit"} onClick={()=>{setAction("Login")}}>Login</div>
+                <div className={action==="Login"?"submit gray":"submit"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
             </div>
+
         </div>
      );
 }
  
-export default loginSignup;
+export default LoginSignup;
