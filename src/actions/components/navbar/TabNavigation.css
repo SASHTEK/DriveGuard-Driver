@@ -8,6 +8,9 @@
     height: 50px;
     background: rgb(85, 84, 84);
     gap: 15px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+
 }
 
 .nav-links{
@@ -20,8 +23,13 @@
     
 }
 
+.nav-links img{
+    margin-top: 3px;
+    height: 20px;
+    width: 20px;
+}
+
 .nav-links a{
     text-decoration: none;
     color: white;
-    vertical-align: middle;
 }
