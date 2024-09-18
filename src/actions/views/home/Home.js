@@ -9,11 +9,11 @@ const Home = () => {
     return ( 
         <div className="container">
             <div className='user-greet'>
-                <Label text={"Welcome"} />
+                <Label text={"Welcome"} bgcolor={"white"} textcolor={"rgb(12, 6, 88)"}/>
             </div>
 
             <div className='offense-status'>
-                <CounterBox text={'Offense Level'} number={2} />
+                <CounterBox text={'Offense Level'} number={2} bgcolor={"white"} textcolor={"black"} roundcolor={"rgb(42, 26, 224)"} numbercolor={"white"} />
             </div>
 
             <div className='user-recommendation'>
@@ -23,7 +23,7 @@ const Home = () => {
             <div className='offense-summary-container'>
 
                 <div className='offense-acceptance'>
-                    <CounterBox text={'Not Responded'} number={2} />
+                    <CounterBox text={'Not Responded'} number={2} bgcolor={"white"} textcolor={"black"} roundcolor={"red"} numbercolor={"white"} />
                 </div>
 
                 <div className='offense-summary'>
@@ -32,7 +32,7 @@ const Home = () => {
 
             </div>
 
-            <TabNavigation/>
+            <TabNavigation bghome={"rgb(10, 55, 202)"}/>
         </div>
      );
 }

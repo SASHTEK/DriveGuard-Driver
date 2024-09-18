@@ -3,22 +3,22 @@ import navTabHome from '../../utils/images/nav-tab-home.png';
 import navTabNew from '../../utils/images/nav-tab-new.png';
 import navTabHistory from '../../utils/images/nav-tab-history.png';
 import navTabSettings from '../../utils/images/nav-tab-settings.png';
-const TabNavigation = () => {
+const TabNavigation = ({bghome, bgnew, bghistory, bgsettings}) => {
     return (  
         <div className='nav-container'>
-            <div className="nav-links">
+            <div className="nav-links" style={{background: bghome}}>
                 <a href="./actions/views/home/Home"><img src={navTabHome} alt="Home tab buttion"/>Home</a>
             </div>
 
-            <div className="nav-links">
+            <div className="nav-links" style={{background: bgnew}}>
                 <a href="./actions/views/new/New"><img src={navTabNew} alt="New alert tab buttion"/>Alerts</a>
             </div>
 
-            <div className="nav-links">
+            <div className="nav-links" style={{background: bghistory}}>
                 <a href="./actions/views/history/History"><img src={navTabHistory} alt="History tab buttion"/>History</a>
             </div>
             
-            <div className="nav-links">
+            <div className="nav-links" style={{background: bgsettings}}>
                 <a href="./actions/views/settings/Settings"><img src={navTabSettings} alt="Settings tab buttion"/>Settings</a>
             </div>
         </div>
