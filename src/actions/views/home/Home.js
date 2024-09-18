@@ -3,12 +3,13 @@ import './Home.css';
 import '../../styles/General.css';
 import CounterBox from '../../components/objects/CounterBox/CounterBox';
 import Card from '../../components/objects/Card/Card';
+import Label from '../../components/objects/Label/Lable';
 
 const Home = () => {
     return ( 
         <div className="container">
             <div className='user-greet'>
-                <h4>Welcome, <span>Name</span></h4>
+                <Label text={"Welcome"} />
             </div>
 
             <div className='offense-status'>

@@ -1,13 +1,5 @@
 .user-greet{
-    background: rgb(12, 6, 88);
-    width: auto;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    margin-top: 10px;
 }
 
 .offense-status{

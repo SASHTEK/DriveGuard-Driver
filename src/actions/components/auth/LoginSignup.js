@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './LoginSignup.css';
 import '../../styles/General.css';
+import Label from '../../components/objects/Label/Lable';
+
 const LoginSignup = () => {
 
     const [action,setAction] = useState("Login");
@@ -22,7 +24,7 @@ const LoginSignup = () => {
 
     return ( 
         <div className='container'>
-            <div className='title'>DriveGuard</div>
+            <Label text={"DriveGuard"} />
 
             <div className='tab-container'>
                 <div className={action==="Sign Up"?"tab gray":"tab"} onClick={()=>{setAction("Login")}}>Login</div>
