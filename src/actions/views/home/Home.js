@@ -23,7 +23,7 @@ const Home = () => {
             <div className='offense-summary-container'>
 
                 <div className='offense-acceptance'>
-                    <CounterBox text={'Not Responded'} number={2} bgcolor={"white"} textcolor={"black"} roundcolor={"darkred"} numbercolor={"white"} />
+                    <CounterBox text={'Not Responded'} number={2} bgcolor={"white"} textcolor={"black"} roundcolor={"red"} numbercolor={"white"} />
                 </div>
 
                 <div className='offense-summary'>
@@ -32,7 +32,7 @@ const Home = () => {
 
             </div>
 
-            <TabNavigation/>
+            <TabNavigation bghome={"rgb(10, 55, 202)"}/>
         </div>
      );
 }
