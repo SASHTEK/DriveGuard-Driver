@@ -1,0 +1,11 @@
+.label{
+    background: rgb(12, 6, 88);
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    margin:auto;
+}
