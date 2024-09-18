@@ -1,8 +1,8 @@
 import './Label.css';
-const Label = ({text}) => {
+const Label = ({text,bgcolor,textcolor}) => {
     return ( 
-        <div className='label'>
-                <h4>{text}</h4>
+        <div className='label' style={{ background: bgcolor}}>
+                <h4 style={{color: textcolor}}>{text}</h4>
             </div>
      );
 }

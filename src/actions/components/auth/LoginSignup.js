@@ -24,7 +24,7 @@ const LoginSignup = () => {
 
     return ( 
         <div className='container'>
-            <Label text={"DriveGuard"} />
+            <Label text={"DriveGuard"} bgcolor={"rgb(12, 6, 88)"} textcolor={"white"}/>
 
             <div className='tab-container'>
                 <div className={action==="Sign Up"?"tab gray":"tab"} onClick={()=>{setAction("Login")}}>Login</div>
