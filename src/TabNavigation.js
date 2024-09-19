@@ -1,4 +1,4 @@
-const tabNavigation = () => {
+const TabNavigation = () => {
     return (  
         <div className='tabNavigationButtons'>
             <div className="tabNavLinks">
@@ -11,4 +11,4 @@ const tabNavigation = () => {
     );
 }
  
-export default tabNavigation;
+export default TabNavigation;

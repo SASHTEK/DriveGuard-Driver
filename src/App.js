@@ -1,4 +1,4 @@
-import tabNavigation from "./TabNavigation";
+import TabNavigation from "./TabNavigation";
 import Home from "./Home";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
       <div className="content">
         <Home/>
       </div>
-      <tabNavigation/>
+      <TabNavigation/>
     </div>
   );
 }
