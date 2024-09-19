@@ -1,21 +1,25 @@
 .new-offense-acceptance{
-    margin-top: 10px;
+    margin-top: 10%;
 }
 
 .new-offense-response-pending{
-    margin-top: 10px;
+    margin-top: 5%;
 }
 
 .new-fine{
-    margin-top: 10px;
+    margin-top: 10%;
 }
 
 .new-fine-settle{
-    margin-top: 10px;
+    margin-top: 5%;
 }
 
 .navposition-new{
-    margin-top: 36px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
 }
 
 

@@ -1,16 +1,20 @@
 .card{
     width: 90%;
-    height: 100px;
+    height: auto;
     margin: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .card-subject{
     background: rgb(240, 236, 236);
     width: auto;
-    height: 25px;
-    text-align: center;
+    min-height: 30px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: green;
-    font-weight: 500px;
+    font-weight: 500;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -18,7 +22,8 @@
 .card-message{
     Background: rgb(15, 107, 6);
     width: auto;
-    height: 60px;
+    min-height: 50px;
+    height: auto;
     color: white;
     font-size: 18px;
     padding: 10px 10px;

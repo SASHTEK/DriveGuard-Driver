@@ -1,25 +1,27 @@
 .offense-status{
-    margin-top: 10px;
+    margin-top: 10%;
 }
 
 .user-recommendation{
-    margin-top: 10px;
+    margin-top: 10%;
 }
 
 .offense-summary-container{
-    margin-top: 10px;
+    margin-top: 10%;
 }
 
 .offense-acceptance{
-    margin-top: 20px;
+    margin-top: 10%;
 }
 
 .fine-due{
-    margin-top: 20px;
+    margin-top: 10%;
 }
 
 .navposition-home{
-    margin-top: 36px;
-    /* bottom: 0;
-    position: fixed; */
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
 }
