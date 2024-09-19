@@ -23,4 +23,6 @@
     font-size: 18px;
     padding: 10px 10px;
     text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
