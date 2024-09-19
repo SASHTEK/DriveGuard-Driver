@@ -25,8 +25,8 @@
 }
 
 .gray{
-    background: rgb(196, 195, 195);
-    color: gray;
+    background: rgb(236, 233, 233);
+    color: rgb(170, 165, 165);
 }
 
 .inputs{
@@ -44,7 +44,7 @@
     align-items: center;
     width: 215px;
     height: 35px;
-    background: rgb(245, 243, 243);
+    background: rgb(217, 223, 222);
     border-radius: 5px;
 }
 
