@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './LoginSignup.css';
 import '../../styles/General.css';
-import Label from '../../components/objects/Label/Lable';
+import Label from '../../components/objects/Label/Label';
 
 const LoginSignup = () => {
 
@@ -24,7 +24,7 @@ const LoginSignup = () => {
 
     return ( 
         <div className='container'>
-            <Label text={"DriveGuard"} bgcolor={"rgb(12, 6, 88)"} textcolor={"white"}/>
+            <Label text={"DriveGuard"}/>
 
             <div className='tab-container'>
                 <div className={action==="Sign Up"?"tab gray":"tab"} onClick={()=>{setAction("Login")}}>Login</div>
