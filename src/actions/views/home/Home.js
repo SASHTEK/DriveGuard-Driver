@@ -31,7 +31,7 @@ const Home = () => {
                 </div>
 
             </div>
-            <div className='navposition'><TabNavigation bghome={"rgb(10, 55, 202)"}/></div>
+            <div className='navposition-home'><TabNavigation bghome={"rgb(10, 55, 202)"}/></div>
             
         </div>
      );
