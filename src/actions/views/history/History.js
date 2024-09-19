@@ -1,7 +1,8 @@
+import TabNavigation from '../../components/navbar/TabNavigation';
 const Histroty = () => {
     return ( 
-        <div className="History">
-            
+        <div className="container">
+            <TabNavigation bghistory={"rgb(10, 55, 202)"}/>
         </div>
      );
 }
