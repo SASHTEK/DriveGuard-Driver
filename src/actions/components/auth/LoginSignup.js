@@ -1,6 +1,6 @@
 import './LoginSignup.css';
 import { useState } from 'react';
-import Label from '../../components/objects/Label/Label';
+import HeaderBox from '../../components/objects/HeaderBox/HeaderBox';
 
 const LoginSignup = () => {
 
@@ -23,33 +23,37 @@ const LoginSignup = () => {
 
     return ( 
         <div className='container'>
-            <Label text={"DriveGuard"}/>
+            <HeaderBox headertext={"DriveGuard"}/>
 
-            <div className='tab-container'>
-                <div className={action==="Sign Up"?"tab gray":"tab"} onClick={()=>{setAction("Login")}}>Login</div>
-                <div className={action==="Login"?"tab gray":"tab"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
-            </div>
+            <div className='error-message'></div>
 
-            <div className='inputs'>
-                <div className='input'>
-                    <input type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}/>
+            <div className='elements'>
+
+                <div className='tab-container'>
+                    <div className={action==="Sign Up"?"tab gray":"tab"} onClick={()=>{setAction("Login")}}>Login</div>
+                    <div className={action==="Login"?"tab gray":"tab"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
                 </div>
-                {action==="Login"?<div></div>:<div className='input'>
-                    <input type='text' placeholder='Driving License Number' value={drivingLicense} onChange={(e) => setDrivingLicense(e.target.value)}/>
-                </div>}
+
+                <div className='inputs'>
+                    <div className='input'>
+                        <input type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}/>
+                    </div>
+                    {action==="Login"?<div></div>:<div className='input'>
+                        <input type='text' placeholder='Driving License Number' value={drivingLicense} onChange={(e) => setDrivingLicense(e.target.value)}/>
+                    </div>}
+                    
+                    <div className='input'>
+                        <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    </div>
+                </div>
                 
-                <div className='input'>
-                    <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                {action==="Sign Up"?<div></div>:<div className='forgot-password'>Lost Password? <span>Click Here</span></div>}
+
+                <div className='submit-container'>
+                    {action==="Login"?<button className='submit' onClick={() => {setAction("Login");handleLogin();}}>Login</button>:<div></div>}
+                    {action==="Sign Up"?<button className='submit' onClick={() => {setAction("Sign Up");handleSignUp();}}>Sign Up</button>:<div></div>}
                 </div>
             </div>
-            
-            {action==="Sign Up"?<div></div>:<div className='forgot-password'>Lost Password? <span>Click Here</span></div>}
-
-            <div className='submit-container'>
-                {action==="Login"?<button className='submit' onClick={() => {setAction("Login");handleLogin();}}>Login</button>:<div></div>}
-                {action==="Sign Up"?<button className='submit' onClick={() => {setAction("Sign Up");handleSignUp();}}>Sign Up</button>:<div></div>}
-            </div>
-
         </div>
      );
 }
