@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import './LoginSignup.css';
-import '../../styles/General.css';
+import { useState } from 'react';
 import Label from '../../components/objects/Label/Label';
 
 const LoginSignup = () => {

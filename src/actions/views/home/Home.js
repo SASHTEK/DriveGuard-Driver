@@ -1,6 +1,5 @@
-import TabNavigation from '../../components/navbar/TabNavigation';
 import './Home.css';
-import '../../styles/General.css';
+import TabNavigation from '../../components/navbar/TabNavigation';
 import CounterBox from '../../components/objects/CounterBox/CounterBox';
 import Card from '../../components/objects/Card/Card';
 import HeaderBox from '../../components/objects/HeaderBox/HeaderBox';

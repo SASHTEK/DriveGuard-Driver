@@ -1,5 +1,6 @@
 
-import LoginSignup from './actions/components/auth/LoginSignup';
+// import LoginSignup from './actions/components/auth/LoginSignup';
+import './App.css';
 import Home from './actions/views/home/Home';
 import New from './actions/views/new/New';
 import History from './actions/views/history/History';
@@ -9,7 +10,7 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <LoginSignup/>
+      {/* <LoginSignup/> */}
       <div className="content">
         <Routes>
           <Route path="/" element={<Home/>} />
