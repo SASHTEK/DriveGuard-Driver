@@ -17,3 +17,9 @@
 .offense-acceptance{
     margin-top: 10px;
 }
+
+.navposition{
+    margin-top: 10px;
+    /* bottom: 0;
+    position: fixed; */
+}
