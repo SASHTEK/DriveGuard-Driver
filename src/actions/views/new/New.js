@@ -4,12 +4,10 @@ import CounterBox from "../../components/objects/CounterBox/CounterBox";
 
 const New = () => {
     return ( 
-        <div className="New>">
-            <div className="container">
-                <Card subject={"Test"} message={"This is a test work"} subbgcolor={"red"} subtextcolor={"white"} msgbgcolor={"white"} msgtextcolor={"red"}/>
-                <CounterBox text={"test"} number={5}/>
-                <TabNavigation bgnew={"rgb(10, 55, 202)"}/>
-            </div>
+        <div className="container">
+            <Card subject={"Test"} message={"This is a test work"} subbgcolor={"red"} subtextcolor={"white"} msgbgcolor={"white"} msgtextcolor={"red"}/>
+            <CounterBox text={"test"} number={5}/>
+            <TabNavigation bgnew={"rgb(10, 55, 202)"}/>
         </div>
      );
 }
