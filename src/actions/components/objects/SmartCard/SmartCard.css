@@ -1,0 +1,56 @@
+.smart-card-container{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.smart-card-details{
+    width: 65%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin: 5% auto;
+}
+
+.smart-card-title{
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: white;
+    background: goldenrod;
+}
+
+.smart-card-message{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    align-items: left;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.smart-card-value{
+    width: 30%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 2%;
+    font-size: 80px;
+    overflow: hidden;
+
+}
