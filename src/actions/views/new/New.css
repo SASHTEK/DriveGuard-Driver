@@ -3,8 +3,7 @@
     min-height: 950px;
     max-height: 1000px;
     overflow: auto;
-    scrollbar-width: thin;
-    background: rgb(24, 223, 41);
+    background: rgb(255, 255, 255);
 }
 
 .new-offense-acceptance{
