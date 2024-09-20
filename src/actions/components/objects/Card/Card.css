@@ -22,12 +22,14 @@
 .card-message{
     Background: rgb(15, 107, 6);
     width: auto;
-    min-height: 50px;
-    height: auto;
     color: white;
     font-size: 18px;
     padding: 10px 10px;
     text-align: center;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    min-height: 20px;
+    max-height: 50px;
+    overflow: auto;
+    scrollbar-width: thin;
 }
