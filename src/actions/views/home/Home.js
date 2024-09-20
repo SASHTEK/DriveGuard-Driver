@@ -3,6 +3,7 @@ import HeaderBox from '../../components/objects/HeaderBox/HeaderBox';
 import TabNavigation from '../../components/navbar/TabNavigation';
 import CounterBox from '../../components/objects/CounterBox/CounterBox';
 import Card from '../../components/objects/Card/Card';
+import SmartCard from '../../components/objects/SmartCard/SmartCard';
 
 const Home = () => {
     return ( 
@@ -12,7 +13,7 @@ const Home = () => {
             <div className='page-content'>
 
                 <div className='offense-status'>
-                    <CounterBox text={'Offense Level'} number={1} bgcolor={"rgb(255, 255, 255)"} textcolor={"black"} roundcolor={"rgb(38, 22, 131"} numbercolor={"white"} />
+                    <SmartCard smarttitle={"Offense Level"} smartmessage={"This is the indication of your current offense level."} smartvalue={1} smarttitlebg={"blue"} smartboxbg={"rgb(220, 236, 240)"}/>
                 </div>
 
                 <div className='user-recommendation'>
