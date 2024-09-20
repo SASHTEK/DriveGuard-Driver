@@ -1,7 +1,6 @@
 import './History.css';
 import HeaderBox from '../../components/objects/HeaderBox/HeaderBox';
 import TabNavigation from '../../components/navbar/TabNavigation';
-import SmartCard from '../../components/objects/SmartCard/SmartCard';
 const Histroty = () => {
     return ( 
         <div className="container">
