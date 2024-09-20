@@ -1,12 +1,14 @@
 import './Settings.css';
+import HeaderBox from '../../components/objects/HeaderBox/HeaderBox';
 import TabNavigation from '../../components/navbar/TabNavigation';
 const Settings = () => {
     return ( 
         <div className="container">
-            <div className='navposition-settings'>
-                <TabNavigation bgsettings={"rgb(10, 55, 202)"}/>
+            <HeaderBox headertext={"Settings"}/>
+            <div className='page-content'>
+                
             </div>
-            
+            <TabNavigation bgsettings={"rgb(10, 55, 202)"}/>
         </div>
      );
 }

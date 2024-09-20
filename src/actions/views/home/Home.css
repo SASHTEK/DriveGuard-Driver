@@ -1,3 +1,11 @@
+.page-content{
+    margin-top: 75px;
+    min-height: 950px;
+    max-height: 1000px;
+    overflow: auto;
+    background: rgb(255, 255, 255);
+}
+
 .offense-status{
     margin-top: 10%;
 }
@@ -16,12 +24,4 @@
 
 .fine-due{
     margin-top: 10%;
-}
-
-.navposition-home{
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    justify-content: space-between;
 }
