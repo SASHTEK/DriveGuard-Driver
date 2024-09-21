@@ -1,10 +1,10 @@
 
-// import LoginSignup from './actions/components/auth/LoginSignup';
+// import LoginSignup from './components/auth/LoginSignup';
 import './App.css';
-import Home from './actions/views/home/Home';
-import New from './actions/views/new/New';
-import History from './actions/views/history/History';
-import Settings from './actions/views/settings/Settings';
+import Home from './views/home/Home';
+import New from './views/new/New';
+import History from './views/history/History';
+import Settings from './views/settings/Settings';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
