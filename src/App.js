@@ -1,5 +1,5 @@
 
-import LoginSignup from './components/auth/LoginSignup';
+// import LoginSignup from './components/auth/LoginSignup';
 import './App.css';
 import Home from './views/home/Home';
 import New from './views/new/New';
@@ -10,15 +10,15 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <LoginSignup/>
-      {/* <div className="content">
+      {/* <LoginSignup/> */}
+      <div className="content">
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/new" element={<New/>} />
           <Route path="/history" element={<History/>} />
           <Route path="/settings" element={<Settings/>} />
         </Routes>
-      </div> */}
+      </div>
     </div>
     </Router>
   );
