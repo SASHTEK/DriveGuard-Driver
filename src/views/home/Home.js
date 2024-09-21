@@ -31,7 +31,7 @@ const Home = () => {
 
 
     // Color change with offense level
-    const [smartValue, setSmartValue] = useState(4); //Offense level
+    const [smartValue, setSmartValue] = useState(0); //Offense level
     const [recommendation, setRecommendation] = useState({
         subject: '',
         message: '',

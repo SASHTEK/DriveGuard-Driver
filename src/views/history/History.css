@@ -3,7 +3,7 @@
     min-height: 950px;
     max-height: 1000px;
     overflow: auto;
-    background: linear-gradient(to bottom, rgb(240, 240, 240), transparent);
+    background: linear-gradient(to bottom, rgb(107, 29, 231), transparent);
 }
 
 .indicator{
