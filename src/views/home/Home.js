@@ -6,6 +6,23 @@ import Card from '../../components/objects/Card/Card';
 import SmartCard from '../../components/objects/SmartCard/SmartCard';
 import { useState, useEffect } from 'react';
 
+
+// Function to determine color change based on number of CounterBoxes
+const getColorChange = (number) => {
+    if (number > 0) {
+        return {
+            bgcolor: 'rgb(255, 216, 216)',
+            roundcolor: 'Red',
+        };
+    } else {
+        return {
+            bgcolor: 'lightgray',
+            roundcolor: 'darkgray',
+        };
+    }
+};
+
+
 const Home = () => {
 
     // Color change with offense level
@@ -73,7 +90,13 @@ const Home = () => {
         }
     }, [smartValue]);
 
-    // Color change with notification value
+    
+    //Color change based on number - CounterBoxes
+    const [responsePending, setResponsePending] = useState(2); //for CounterBox: Response Pending
+    const [finesToBeSettled, setFinesToBeSettled] = useState(0); //for CounterBox: Fines to be setteled
+
+    const colorChange1 = getColorChange(responsePending); //for CounterBox: Response Pending
+    const colorChange2 = getColorChange(finesToBeSettled); //for CounterBox: Fines to be setteled
 
 
     return ( 
@@ -111,11 +134,11 @@ const Home = () => {
                 <div className='offense-summary-container'>
 
                     <div className='offense-acceptance'>
-                        <CounterBox text={'Response Pending'} number={0} bgcolor={"lightgray"} textcolor={"black"} roundcolor={"gray"} numbercolor={"white"} />
+                        <CounterBox text={'Response Pending'} number={responsePending} bgcolor={colorChange1.bgcolor} textcolor={"black"} roundcolor={colorChange1.roundcolor} numbercolor={"white"} />
                     </div>
 
                     <div className='fine-due'>
-                        <CounterBox text={'Fines to be Settled'} number={0} bgcolor={"lightgray"} textcolor={"black"} roundcolor={"gray"} numbercolor={"white"} />
+                        <CounterBox text={'Fines to be Settled'} number={finesToBeSettled} bgcolor={colorChange2.bgcolor} textcolor={"black"} roundcolor={colorChange2.roundcolor} numbercolor={"white"} />
                     </div>
                 
                 </div>
