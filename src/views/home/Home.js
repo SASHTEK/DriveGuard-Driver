@@ -31,7 +31,7 @@ const Home = () => {
 
 
     // Color change with offense level
-    const [smartValue, setSmartValue] = useState(0); //Offense level
+    const [smartValue, setSmartValue] = useState(4); //Offense level
     const [recommendation, setRecommendation] = useState({
         subject: '',
         message: '',
@@ -88,6 +88,17 @@ const Home = () => {
                     smartboxbg: 'rgb(255, 182, 193)',
                     smarttitlebg: 'darkred',
                     pagecolor: 'linear-gradient(to bottom, red, transparent)'
+                });
+                break;
+                case 4:
+                setRecommendation({
+                    subject: 'You are prohibited from driving',
+                    message: 'Your driving license has been temporarily suspended.',
+                    subbgcolor: 'black',
+                    msgbgcolor: 'rgb(75, 75, 75)',
+                    smartboxbg: 'darkgray',
+                    smarttitlebg: 'black',
+                    pagecolor: 'linear-gradient(to bottom, black, transparent)'
                 });
                 break;
             default:
