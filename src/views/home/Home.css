@@ -1,10 +1,8 @@
-.page-content{
-    margin-top: 75px;
+.page-content-home{
+    margin-top: 50px;
     min-height: 950px;
     max-height: 1000px;
     overflow: auto;
-    /* background: rgb(255, 255, 255); */
-    /* background: linear-gradient(to bottom, blue, transparent); */
 }
 
 .greet{
@@ -14,6 +12,7 @@
 .greet h1{
     text-align: center;
     color: rgb(255, 255, 255);
+    /* text-shadow: 2px 2px 4px black; */
 }
 
 .offense-status{

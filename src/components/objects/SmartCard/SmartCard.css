@@ -41,6 +41,7 @@
     align-items: left;
     text-align: left;
     overflow: hidden;
+    color:rgb(78, 75, 75);
 }
 
 .smart-card-value{
@@ -52,4 +53,6 @@
     margin: auto 2%;
     font-size: 80px;
     overflow: hidden;
+    /* color: white;
+    text-shadow: 2px 2px 4px black; */
 }
