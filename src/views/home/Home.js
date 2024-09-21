@@ -7,7 +7,7 @@ import SmartCard from '../../components/objects/SmartCard/SmartCard';
 import { useState, useEffect } from 'react';
 
 const Home = () => {
-    const [smartValue, setSmartValue] = useState(0);
+    const [smartValue, setSmartValue] = useState(3);
     const [recommendation, setRecommendation] = useState({
         subject: '',
         message: '',
