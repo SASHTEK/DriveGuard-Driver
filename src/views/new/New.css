@@ -3,21 +3,64 @@
     min-height: 950px;
     max-height: 1000px;
     overflow: auto;
-    background: linear-gradient(to bottom, rgb(240, 240, 240), transparent);
 }
 
-.new-offense-acceptance{
+.new-tab-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: auto;
+    width: 90%;
+    height: 50px;
+    border-radius: 5px;
     margin-top: 10%;
 }
 
-.new-offense-response-pending{
-    margin-top: 5%;
+.tab-new{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 45px;
+    color: rgb(255, 255, 255);
+    background: rgb(5, 16, 179);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.gray-new{
+    background: rgb(92, 100, 214);
+    color: rgb(209, 205, 205);
+}
+
+.new-data-view{
+    margin-top: 10%;
+}
+
+.new-offense{
+    margin: auto;
+    width: 90%;
+    min-height: 800px;
+    /* max-height: auto;
+    overflow:auto; */
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
 }
 
 .new-fine{
-    margin-top: 10%;
-}
-
-.new-fine-settle{
-    margin-top: 5%;
+    margin: auto;
+    width: 90%;
+    min-height: 800px;
+    /* max-height: 801px;
+    overflow: auto; */
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
 }
