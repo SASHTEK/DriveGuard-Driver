@@ -4,11 +4,10 @@ import TabNavigation from '../../components/navbar/TabNavigation';
 import CounterBox from '../../components/objects/CounterBox/CounterBox';
 import Card from '../../components/objects/Card/Card';
 import SmartCard from '../../components/objects/SmartCard/SmartCard';
-import Label from '../../components/objects/Label/Label';
 import { useState, useEffect } from 'react';
 
 const Home = () => {
-    const [smartValue, setSmartValue] = useState(0);
+    const [smartValue, setSmartValue] = useState(1);
     const [recommendation, setRecommendation] = useState({
         subject: '',
         message: '',
@@ -16,7 +15,8 @@ const Home = () => {
         msgbgcolor: '',
         msgtextcolor: '',
         smartboxbg: '',
-        smarttitlebg: ''
+        smarttitlebg: '',
+        pagecolor: 'linear-gradient(to bottom, gray, transparent)'
     });
 
     useEffect(() => {
@@ -29,6 +29,7 @@ const Home = () => {
                     msgbgcolor: 'green',
                     smartboxbg: 'lightgreen',
                     smarttitlebg: 'darkgreen',
+                    pagecolor: 'linear-gradient(to bottom, green, transparent)'
                 });
                 break;
             case 1:
@@ -36,9 +37,10 @@ const Home = () => {
                     subject: 'You are a Good Driver',
                     message: 'Your driving behavior will be exemplary to others.',
                     subbgcolor: 'darkblue',
-                    msgbgcolor: 'blue',
+                    msgbgcolor: 'rgb(1, 111, 236)',
                     smartboxbg: 'lightblue',
-                    smarttitlebg: 'darkblue'
+                    smarttitlebg: 'darkblue',
+                    pagecolor: 'linear-gradient(to bottom, rgb(25, 132, 255), transparent)'
                 });
                 break;
             case 2:
@@ -49,7 +51,8 @@ const Home = () => {
                     msgbgcolor: 'orange',
                     msgtextcolor: 'black',
                     smartboxbg: 'rgb(252, 210, 153)',
-                    smarttitlebg: 'black'
+                    smarttitlebg: 'black',
+                    pagecolor: 'linear-gradient(to bottom, orange, transparent)'
                 });
                 break;
             case 3:
@@ -59,7 +62,8 @@ const Home = () => {
                     subbgcolor: 'darkred',
                     msgbgcolor: 'red',
                     smartboxbg: 'rgb(255, 182, 193)',
-                    smarttitlebg: 'black'
+                    smarttitlebg: 'black',
+                    pagecolor: 'linear-gradient(to bottom, red, transparent)'
                 });
                 break;
             default:
@@ -71,10 +75,10 @@ const Home = () => {
         <div className="container">
             <HeaderBox headertext={"DriveGuard Home"}/>
 
-            <div className='page-content'>
+            <div style={{background: recommendation.pagecolor}} className='page-content'>
 
-                <div>
-                <Label text={"Welcome"}/>
+                <div className='greet'>
+                <h1>Welcome, <span>user</span></h1>
                 </div>
 
                 <div className='offense-status'>

@@ -3,7 +3,17 @@
     min-height: 950px;
     max-height: 1000px;
     overflow: auto;
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
+    /* background: linear-gradient(to bottom, blue, transparent); */
+}
+
+.greet{
+    margin-top: 10%;
+}
+
+.greet h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
 }
 
 .offense-status{
@@ -15,7 +25,7 @@
 }
 
 .offense-summary-container{
-    margin-top: 10%;
+    margin-top: 20%;
 }
 
 .offense-acceptance{
