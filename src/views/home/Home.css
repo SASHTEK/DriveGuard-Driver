@@ -31,6 +31,14 @@
     margin-top: 10%;
 }
 
+.offense-acceptance a{
+    text-decoration: none;
+}
+
 .fine-due{
     margin-top: 10%;
+}
+
+.fine-due a{
+    text-decoration: none;
 }

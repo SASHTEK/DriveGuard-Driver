@@ -1,6 +1,7 @@
 import './LoginSignup.css';
 import { useState } from 'react';
 import HeaderBox from '../../components/objects/HeaderBox/HeaderBox';
+import { useNavigate } from 'react-router-dom';
 
 const LoginSignup = () => {
 
@@ -11,9 +12,13 @@ const LoginSignup = () => {
     const [password, setPassword] = useState("");
     const [drivingLicense, setDrivingLicense] = useState("");
 
+    // Navigate to Home page
+    const navigate = useNavigate();
+
     // Handle Login Button Action
     const handleLogin = () => {
         console.log("Login:", { username, password });
+        navigate('/Home');
     };
 
     // Handle Sign Up Button Action

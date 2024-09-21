@@ -5,6 +5,7 @@ import CounterBox from '../../components/objects/CounterBox/CounterBox';
 import Card from '../../components/objects/Card/Card';
 import SmartCard from '../../components/objects/SmartCard/SmartCard';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 // Function to determine color change based on number of CounterBoxes
@@ -24,6 +25,10 @@ const getColorChange = (number) => {
 
 
 const Home = () => {
+
+    //Set user/ username
+    const [user, setUser] = useState('Guest');
+
 
     // Color change with offense level
     const [smartValue, setSmartValue] = useState(0); //Offense level
@@ -92,7 +97,7 @@ const Home = () => {
 
     
     //Color change based on number - CounterBoxes
-    const [responsePending, setResponsePending] = useState(2); //for CounterBox: Response Pending
+    const [responsePending, setResponsePending] = useState(1); //for CounterBox: Response Pending
     const [finesToBeSettled, setFinesToBeSettled] = useState(0); //for CounterBox: Fines to be setteled
 
     const colorChange1 = getColorChange(responsePending); //for CounterBox: Response Pending
@@ -106,7 +111,7 @@ const Home = () => {
             <div style={{background: recommendation.pagecolor}} className='page-content-home'>
 
                 <div className='greet'>
-                <h1>Welcome, <span>user</span></h1>
+                <h1>Welcome, <span>{user}</span></h1>
                 </div>
 
                 <div className='offense-status'>
@@ -134,11 +139,11 @@ const Home = () => {
                 <div className='offense-summary-container'>
 
                     <div className='offense-acceptance'>
-                        <CounterBox text={'Response Pending'} number={responsePending} bgcolor={colorChange1.bgcolor} textcolor={"black"} roundcolor={colorChange1.roundcolor} numbercolor={"white"} />
+                    <Link to="/new"><CounterBox text={'Response Pending'} number={responsePending} bgcolor={colorChange1.bgcolor} textcolor={"black"} roundcolor={colorChange1.roundcolor} numbercolor={"white"} /></Link>
                     </div>
 
                     <div className='fine-due'>
-                        <CounterBox text={'Fines to be Settled'} number={finesToBeSettled} bgcolor={colorChange2.bgcolor} textcolor={"black"} roundcolor={colorChange2.roundcolor} numbercolor={"white"} />
+                    <Link to="/new"><CounterBox text={'Fines to be Settled'} number={finesToBeSettled} bgcolor={colorChange2.bgcolor} textcolor={"black"} roundcolor={colorChange2.roundcolor} numbercolor={"white"} /></Link>
                     </div>
                 
                 </div>
