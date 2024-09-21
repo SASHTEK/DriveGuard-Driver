@@ -1,5 +1,5 @@
 
-// import LoginSignup from './components/auth/LoginSignup';
+import LoginSignup from './components/auth/LoginSignup';
 import './App.css';
 import Home from './views/home/Home';
 import New from './views/new/New';

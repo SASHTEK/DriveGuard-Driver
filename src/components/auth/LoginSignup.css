@@ -40,7 +40,7 @@
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 35px;
+    height: 45px;
     color: rgb(255, 255, 255);
     background: rgb(5, 16, 179);
     border-radius: 5px;
@@ -70,7 +70,7 @@
     display: flex;
     align-items: center;
     width: auto;
-    height: 35px;
+    height: 45px;
     background: #ffffff;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -109,7 +109,7 @@
     justify-content: center;
     align-items: center;
     width: 200px;
-    height: 35px;
+    height: 45px;
     color: aliceblue;
     background: #54a007;
     border-radius: 6px;
