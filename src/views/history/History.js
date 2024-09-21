@@ -5,7 +5,7 @@ const Histroty = () => {
     return ( 
         <div className="container">
             <HeaderBox headertext={"Offense History"}/>
-            <div className='page-content'>
+            <div className='page-content-history'>
                 <div className='indicator'>
                 </div>
             </div>

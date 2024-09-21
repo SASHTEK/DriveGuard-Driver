@@ -9,7 +9,7 @@ const New = () => {
         <div className="container">
             <HeaderBox headertext={"Alerts"}/>
 
-            <div className='page-content'>        
+            <div className='page-content-new'>        
                 <div className="new-offense-acceptance">
                     <Label text={"New Offense Acceptance"}/>
                 </div>

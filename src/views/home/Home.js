@@ -7,7 +7,7 @@ import SmartCard from '../../components/objects/SmartCard/SmartCard';
 import { useState, useEffect } from 'react';
 
 const Home = () => {
-    const [smartValue, setSmartValue] = useState(1);
+    const [smartValue, setSmartValue] = useState(0);
     const [recommendation, setRecommendation] = useState({
         subject: '',
         message: '',
@@ -16,7 +16,7 @@ const Home = () => {
         msgtextcolor: '',
         smartboxbg: '',
         smarttitlebg: '',
-        pagecolor: 'linear-gradient(to bottom, gray, transparent)'
+        pagecolor: 'linear-gradient(to bottom, rgb(240, 240, 240), transparent)'
     });
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const Home = () => {
                     subbgcolor: 'darkblue',
                     msgbgcolor: 'rgb(1, 111, 236)',
                     smartboxbg: 'lightblue',
-                    smarttitlebg: 'darkblue',
+                    smarttitlebg: 'rgb(1, 111, 236)',
                     pagecolor: 'linear-gradient(to bottom, rgb(25, 132, 255), transparent)'
                 });
                 break;
@@ -51,7 +51,7 @@ const Home = () => {
                     msgbgcolor: 'orange',
                     msgtextcolor: 'black',
                     smartboxbg: 'rgb(252, 210, 153)',
-                    smarttitlebg: 'black',
+                    smarttitlebg: 'rgb(88, 83, 4)',
                     pagecolor: 'linear-gradient(to bottom, orange, transparent)'
                 });
                 break;
@@ -62,7 +62,7 @@ const Home = () => {
                     subbgcolor: 'darkred',
                     msgbgcolor: 'red',
                     smartboxbg: 'rgb(255, 182, 193)',
-                    smarttitlebg: 'black',
+                    smarttitlebg: 'darkred',
                     pagecolor: 'linear-gradient(to bottom, red, transparent)'
                 });
                 break;
@@ -75,7 +75,7 @@ const Home = () => {
         <div className="container">
             <HeaderBox headertext={"DriveGuard Home"}/>
 
-            <div style={{background: recommendation.pagecolor}} className='page-content'>
+            <div style={{background: recommendation.pagecolor}} className='page-content-home'>
 
                 <div className='greet'>
                 <h1>Welcome, <span>user</span></h1>

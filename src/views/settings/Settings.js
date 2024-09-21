@@ -5,7 +5,7 @@ const Settings = () => {
     return ( 
         <div className="container">
             <HeaderBox headertext={"Settings"}/>
-            <div className='page-content'>
+            <div className='page-content-settings'>
                 
             </div>
             <TabNavigation bgsettings={"rgb(10, 55, 202)"}/>
