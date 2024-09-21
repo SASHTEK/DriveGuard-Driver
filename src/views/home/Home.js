@@ -7,7 +7,9 @@ import SmartCard from '../../components/objects/SmartCard/SmartCard';
 import { useState, useEffect } from 'react';
 
 const Home = () => {
-    const [smartValue, setSmartValue] = useState(3);
+
+    // Color change with offense level
+    const [smartValue, setSmartValue] = useState(0); //Offense level
     const [recommendation, setRecommendation] = useState({
         subject: '',
         message: '',
@@ -71,6 +73,9 @@ const Home = () => {
         }
     }, [smartValue]);
 
+    // Color change with notification value
+
+
     return ( 
         <div className="container">
             <HeaderBox headertext={"DriveGuard Home"}/>
@@ -106,11 +111,11 @@ const Home = () => {
                 <div className='offense-summary-container'>
 
                     <div className='offense-acceptance'>
-                        <CounterBox text={'Response Pending'} number={2} bgcolor={"rgb(255, 216, 216)"} textcolor={"black"} roundcolor={"red"} numbercolor={"white"} />
+                        <CounterBox text={'Response Pending'} number={0} bgcolor={"lightgray"} textcolor={"black"} roundcolor={"gray"} numbercolor={"white"} />
                     </div>
 
                     <div className='fine-due'>
-                        <CounterBox text={'Fines to be Settled'} number={0} bgcolor={"lightgray"} textcolor={"black"} roundcolor={"darkgray"} numbercolor={"white"} />
+                        <CounterBox text={'Fines to be Settled'} number={0} bgcolor={"lightgray"} textcolor={"black"} roundcolor={"gray"} numbercolor={"white"} />
                     </div>
                 
                 </div>
