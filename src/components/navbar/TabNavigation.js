@@ -9,7 +9,7 @@ const TabNavigation = ({bghome, bgnew, bghistory, bgsettings}) => {
         <div className='nav-bar'>
             <div className='nav-container'>
                 <div className="nav-links" style={{background: bghome}}>
-                    <Link to="/"><img src={navTabHome} alt="Home tab button" />Home</Link>
+                    <Link to="/home"><img src={navTabHome} alt="Home tab button" />Home</Link>
                 </div>
 
                 <div className="nav-links" style={{background: bgnew}}>
