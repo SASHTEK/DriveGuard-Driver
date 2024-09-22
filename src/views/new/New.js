@@ -13,20 +13,22 @@ const New = () => {
 
             <div  style={{background: switchTab === "Fine" ? 'linear-gradient(to right, rgb(128, 188, 236), transparent)' : 'linear-gradient(to left, rgb(128, 188, 236), transparent)'}} className='page-content-new'> 
 
-                <div className='new-tab-container'>
-                    <div className={switchTab==="Offense"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Fine")}}>Offense</div>
-                    <div className={switchTab==="Fine"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Offense")}}>Fine</div>
+                <div className='new-tab-navigation-area'>
+                    <div className='new-tab-container'>
+                        <div className={switchTab==="Offense"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Fine")}}>Offense</div>
+                        <div className={switchTab==="Fine"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Offense")}}>Fine</div>
+                    </div>
                 </div>
 
                 <div className='new-data-view'>
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
-                        
+                        {/* Offense data display here. */}
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
                     <div className="new-fine">
-                        This is a test component
+                        {/* Fine data display here. */}
                     </div>}
                 </div>
 
