@@ -23,38 +23,12 @@ const New = () => {
                 <div className='new-data-view'>
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-                        <p>This is a test component - Offiese</p>
-
-                        
-                        
+                        {/* Offense data display here. */}
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
                     <div className="new-fine">
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
-                        <p>This is a test component</p>
+                        {/* Fine data display here. */}
                     </div>}
                 </div>
 
