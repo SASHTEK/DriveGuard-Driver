@@ -1,14 +1,13 @@
 .page-content-history{
     margin-top: 50px;
-    min-height: 950px;
-    max-height: 1000px;
+    min-height: 1200px;
+    max-height: 1201px;
     overflow: auto;
     background: linear-gradient(to bottom, rgb(107, 29, 231), transparent);
 }
 
 .indicator{
     margin-top: 10%;
-    background: red;
     height: auto;
 }
 
@@ -25,14 +24,13 @@
     text-align: center;
     margin: auto;
     border-radius: 7px;
-    background: greenyellow;
-
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .history-list-view{
     margin-top: 10%;
-    background: rgb(222, 8, 241);
-    height: 200px;
+    height: auto;
 }
 
 .history-list-view h2{
@@ -40,3 +38,90 @@
     color: white;
     text-shadow: 2px 2px 4px rgb(94, 92, 92);
 }
+
+.history-list-components{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    margin: auto;
+}
+
+.history-list-components-date-range {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    padding: 10px; 
+    align-items: center;
+}
+
+.history-list-components-date-range-from{
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.history-list-components-date-range-to{
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.history-list-components-select-items{
+    display: flex;
+    height: 30px;
+    gap: 5%;
+    width: 95%;
+    margin: 5% auto;
+}
+
+.history-list-components-select-items select{
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.history-list-components-select-items button{
+    width: 40%;
+    height: 40px;
+    background: rgb(107, 29, 231);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(36, 25, 75, 0.3);
+}
+
+.history-list-display{
+    margin-top: 5%;
+    height: auto;
+}
+
+.history-list-display-box{
+    min-height: 500px;
+    max-height: 501px;
+    overflow: auto;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    border-radius: 7px;
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
