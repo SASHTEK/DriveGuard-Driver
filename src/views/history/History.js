@@ -9,6 +9,7 @@ import TabNavigation from '../../components/navbar/TabNavigation';
 
 // Browse History List
 const options = [
+  { value: '', label: 'Select offense type...' },
   { value: 'Fine pay', label: 'Fine pay' },
   { value: 'Offense 1', label: 'Offense 1' },
   { value: 'Offenses 2', label: 'Offenses 2' },
@@ -16,10 +17,14 @@ const options = [
 ];
 
 const History = () => {
+
+  // Select Offenses
+  const [selectedOption, setSelectedOption] = useState(options[0].value);
+
   // Date Time Picker
   const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
-  const [selectedOption, setSelectedOption] = useState(options[0].value);
+  
 
   const handleFromDateChange = (date) => {
     setFromDate(date);
