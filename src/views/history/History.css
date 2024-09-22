@@ -8,4 +8,35 @@
 
 .indicator{
     margin-top: 10%;
+    background: red;
+    height: auto;
+}
+
+.indicator h2{
+    text-align: center;
+    color: white;
+}
+
+.offense-summary{
+    min-height: 200px;
+    max-height: 201px;
+    overflow: auto;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    border-radius: 7px;
+    background: greenyellow;
+
+}
+
+.history-list-view{
+    margin-top: 10%;
+    background: rgb(222, 8, 241);
+    height: 200px;
+}
+
+.history-list-view h2{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(94, 92, 92);
 }
