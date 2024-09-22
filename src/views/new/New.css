@@ -1,16 +1,23 @@
 .page-content-new{
     margin-top: 50px;
-    min-height: 950px;
-    max-height: 1000px;
-    overflow: auto;
+    height: 800px;
+    /* min-height: 1200px;
+    max-height: 1201px;
+    overflow: auto; */
+}
+
+.new-tab-navigation-area{
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .new-tab-container{
+    margin-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin: auto;
     width: 90%;
     height: 50px;
     border-radius: 5px;
@@ -44,11 +51,12 @@
 .new-offense{
     margin: auto;
     width: 90%;
-    min-height: 800px;
-    /* max-height: auto;
-    overflow:auto; */
+    min-height: 600px;
+    max-height: 601px;
+    overflow:auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     border-radius: 10px;
     background: rgb(255, 255, 255);
 }
@@ -56,11 +64,12 @@
 .new-fine{
     margin: auto;
     width: 90%;
-    min-height: 800px;
-    /* max-height: 801px;
-    overflow: auto; */
+    min-height: 600px;
+    max-height: 601px;
+    overflow:auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     border-radius: 10px;
     background: rgb(255, 255, 255);
 }
