@@ -1,0 +1,121 @@
+.page-content-login{
+    margin-top: 50px;
+    min-height: 950px;
+    max-height: 1000px;
+    overflow: auto;
+    background: linear-gradient(to bottom, rgb(81, 18, 255), transparent);
+}
+
+.login-title{
+    margin-top: 20%;
+    text-align: center;
+}
+
+.login-title h1{
+    color: white;
+}
+
+.login-title p{
+    color: white;
+}
+
+.elements{
+    margin-top: 25%;
+}
+
+.tab-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: auto;
+    width: 90%;
+    height: 50px;
+    margin-top: 15%;
+    border-radius: 5px;
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 45px;
+    color: rgb(255, 255, 255);
+    background: rgb(5, 16, 179);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.gray{
+    background: rgb(81, 18, 255);
+    color: rgb(170, 165, 165);
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    margin: 10% auto;
+    height: auto;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 45px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input input{
+    margin-left: 5%;
+    height: 30px;
+    width: 90%;
+    background:transparent;
+    border: none;
+    outline:none;
+    font-size: 14px;
+}
+
+.forgot-password{
+    margin-top: 10%;
+    color: rgb(28, 29, 29);
+    font-size: 14px;
+    text-align: center;
+}
+
+.forgot-password span{
+    color: rgb(55, 12, 96);
+    cursor: pointer;
+}
+
+.submit-container{
+    display: flex;
+    margin: 10% auto;
+    justify-content: center;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 45px;
+    color: aliceblue;
+    background: #54a007;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-color: rgb(188, 194, 188);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

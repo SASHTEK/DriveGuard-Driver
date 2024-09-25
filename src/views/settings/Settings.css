@@ -1,0 +1,8 @@
+.page-content-settings{
+    margin-top: 50px;
+    min-height: 1200px;
+    max-height: 1201px;
+    overflow: auto;
+    background: rgb(61, 61, 61);
+    /* background: linear-gradient(to bottom, rgb(240, 240, 240), transparent); */
+}

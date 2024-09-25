@@ -1,0 +1,44 @@
+.page-content-home{
+    margin-top: 50px;
+    min-height: 1200px;
+    max-height: 1201px;
+    overflow: auto;
+}
+
+.greet{
+    margin-top: 10%;
+}
+
+.greet h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    /* text-shadow: 2px 2px 4px black; */
+}
+
+.offense-status{
+    margin-top: 10%;
+}
+
+.user-recommendation{
+    margin-top: 10%;
+}
+
+.offense-summary-container{
+    margin-top: 20%;
+}
+
+.offense-acceptance{
+    margin-top: 10%;
+}
+
+.offense-acceptance a{
+    text-decoration: none;
+}
+
+.fine-due{
+    margin-top: 10%;
+}
+
+.fine-due a{
+    text-decoration: none;
+}

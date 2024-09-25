@@ -1,0 +1,35 @@
+.card{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-subject{
+    background: rgb(240, 236, 236);
+    width: auto;
+    min-height: 30px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-weight: 500;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-message{
+    Background: rgb(15, 107, 6);
+    width: auto;
+    color: white;
+    font-size: 18px;
+    padding: 10px 10px;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 20px;
+    max-height: 50px;
+    overflow: auto;
+    scrollbar-width: thin;
+}
