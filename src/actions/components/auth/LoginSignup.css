@@ -1,0 +1,95 @@
+.tab-container{
+    display: flex;
+    gap: 15px;
+    margin: auto;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 35px;
+    color: rgb(255, 255, 255);
+    background: rgb(38, 22, 131);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tab:hover{
+    border: 2px solid rgb(121, 117, 117);
+}
+
+.gray{
+    background: rgb(236, 233, 233);
+    color: rgb(170, 165, 165);
+}
+
+.inputs{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    margin: auto;
+}
+
+.input{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 215px;
+    height: 35px;
+    background: rgb(217, 223, 222);
+    border-radius: 5px;
+}
+
+.input input{
+    margin-left: 15px;
+    height: 30px;
+    width: 180px;
+    background:transparent;
+    border: none;
+    outline:none;
+    font-size: 13px;
+}
+
+.forgot-password{
+    margin-top: 15px;
+    color: rgb(92, 95, 95);
+    font-size: 13px;
+    text-align: center;
+}
+
+.forgot-password span{
+    color: rgb(55, 12, 96);
+    cursor: pointer;
+}
+
+.submit-container{
+    display: flex;
+    margin: 20px auto;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 35px;
+    color: aliceblue;
+    background: rgb(3, 172, 54);
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-color: rgb(188, 194, 188);
+}
+
+.submit:hover{
+    background: green;
+}
