@@ -48,16 +48,17 @@ const LoginSignup = () => {
                     </div>
 
                     <div className='inputs'>
-                        <div className='input'>
+                        {action==="Sign Up"?<div></div>:<div className='input'>
                             <input type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}/>
-                        </div>
+                        </div>}
+                        
                         {action==="Login"?<div></div>:<div className='input'>
                             <input type='text' placeholder='Driving License Number' value={drivingLicense} onChange={(e) => setDrivingLicense(e.target.value)}/>
                         </div>}
                         
-                        <div className='input'>
+                        {action==="Sign Up"?<div></div>:<div className='input'>
                             <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
-                        </div>
+                        </div>}
                     </div>
                     
                     {action==="Sign Up"?<div></div>:<div className='forgot-password'>Lost Password? <span>Click Here</span></div>}
