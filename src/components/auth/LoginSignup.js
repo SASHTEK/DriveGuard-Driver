@@ -2,6 +2,7 @@ import './LoginSignup.css';
 import { useState } from 'react';
 import HeaderBox from '../../components/objects/HeaderBox/HeaderBox';
 import { useNavigate } from 'react-router-dom';
+import { driverLogin } from '../../middleware/driverApis/login';
 
 const LoginSignup = () => {
 
@@ -16,15 +17,31 @@ const LoginSignup = () => {
     const navigate = useNavigate();
 
     // Handle Login Button Action
-    const handleLogin = () => {
+    // attched login function here
+    const handleLogin = async () => {
         console.log("Login:", { username, password });
-        navigate('/Home');
+        try{
+            if(username != null && password != null){
+                const response = await driverLogin(username, password);
+                if(response.status === 200){
+                    navigate('/home');
+                }
+            }
+        }catch(err){
+            console.error("Error calling backend login function: ", err);
+        }
+    
     };
 
     // Handle Sign Up Button Action
     const handleSignUp = () => {
         console.log("Sign Up:", { username, drivingLicense, password });
     };
+
+    // login funtion
+    const login = async (username, password) => {
+      
+    }
 
     return ( 
         <div className='container'>
