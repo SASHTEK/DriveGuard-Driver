@@ -24,6 +24,7 @@ const LoginSignup = () => {
             if(username != null && password != null){
                 const response = await driverLogin(username, password);
                 if(response.status === 200){
+                    
                     navigate('/home');
                 }
             }
