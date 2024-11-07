@@ -18,7 +18,6 @@ const getInitialData = async(userId) =>{
             },
           }
         );
-        console.log(response);
         return response;
       } catch (err) {
         console.error("Driver login api call error: ", err);
@@ -27,4 +26,4 @@ const getInitialData = async(userId) =>{
 
 export {
   getInitialData
-}
+} 
