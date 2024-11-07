@@ -19,8 +19,21 @@
     color: white;
 }
 
+.error-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    height: 50px;
+    background: red;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
 .elements{
-    margin-top: 25%;
+    margin-top: 15%;
 }
 
 .tab-container{

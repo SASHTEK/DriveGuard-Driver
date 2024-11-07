@@ -12,14 +12,19 @@ const LoginSignup = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [drivingLicense, setDrivingLicense] = useState("");
+    const [alertMessage, setAlertMessage] = useState("");
 
     // Navigate to Home page
     const navigate = useNavigate();
 
     // Handle Login Button Action
-    // attched login function here
     const handleLogin = async () => {
-        console.log("Login:", { username, password });
+        await login(username, password);
+    };
+
+    // login funtion
+    const login = async (username, password) => {
+      
         try{
             if(username != null && password != null){
                 const response = await driverLogin(username, password);
@@ -27,22 +32,22 @@ const LoginSignup = () => {
                     
                     navigate('/home');
                 }
+                else if(response.status === 401){
+                    
+                    console.log("Incorrect Username or Password");
+                    setAlertMessage("Incorrect Username or Password!");
+                }
             }
         }catch(err){
             console.error("Error calling backend login function: ", err);
+            setAlertMessage("An error occurred. Please try again.");
         }
-    
-    };
+    }
 
     // Handle Sign Up Button Action
     const handleSignUp = () => {
         console.log("Sign Up:", { username, drivingLicense, password });
     };
-
-    // login funtion
-    const login = async (username, password) => {
-      
-    }
 
     return ( 
         <div className='container'>
@@ -56,7 +61,7 @@ const LoginSignup = () => {
 
                 </div>
 
-                <div className='error-message'></div>
+                {alertMessage && <div className='error-message'>{alertMessage}</div>}
 
                 <div className='elements'>
 
