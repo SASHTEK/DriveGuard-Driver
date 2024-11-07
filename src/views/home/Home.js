@@ -26,13 +26,20 @@ const getColorChange = (number) => {
 const Home = () => {
   //Set user/ username
   const [user, setUser] = useState("Guest");
-  const driverId = 1;
+  const [driverId, setDriverId] = useState(null);
+
+  // Retrieve the userId from local storage
+  useEffect(() => {const storedUserId = localStorage.getItem('userId'); 
+    if (storedUserId) { 
+      setDriverId(storedUserId); 
+    } 
+  }, []);
 
   // get driver data
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await getInitialData(driverId);
+        const data = await getInitialData(setDriverId);
         if (data !== null && data !== undefined) {
           console.log(data);
         }
@@ -41,8 +48,11 @@ const Home = () => {
       }
     };
 
-    getData();
-  }, [driverId]);
+    if (setDriverId !== null){
+        getData();
+    }
+    
+  }, [setDriverId]);
 
   // Color change with offense level
   const [smartValue, setSmartValue] = useState(0); //Offense level
@@ -138,7 +148,7 @@ const Home = () => {
       >
         <div className="greet">
           <h1>
-            Welcome, <span>{user}</span>
+            Welcome, <span>{user},{driverId}</span>
           </h1>
         </div>
 
