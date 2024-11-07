@@ -21,28 +21,30 @@ const LoginSignup = () => {
     const handleLogin = async () => {
         await login(username, password);
     };
+    
 
-    // login funtion
+    // login function
     const login = async (username, password) => {
-      
-        try{
-            if(username != null && password != null){
+        try {
+            // Check if username and password are provided
+            if (username && password) {
                 const response = await driverLogin(username, password);
-                if(response.status === 200){
-                    
+                if (response.status === 200) {
+                    const userId = response.data.userId; 
+                    localStorage.setItem('userId', userId);
                     navigate('/home');
-                }
-                else if(response.status === 401){
-                    
-                    console.log("Incorrect Username or Password");
-                    setAlertMessage("Incorrect Username or Password!");
-                }
+                } 
+
+            } else {
+                console.log("Username and Password are required.");
+                setAlertMessage("Username and Password cannot be empty!");
             }
-        }catch(err){
+        } catch (err) {
             console.error("Error calling backend login function: ", err);
-            setAlertMessage("An error occurred. Please try again.");
+            setAlertMessage("Incorrect Username or Password!");
         }
-    }
+    };
+
 
     // Handle Sign Up Button Action
     const handleSignUp = () => {

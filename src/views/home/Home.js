@@ -33,7 +33,7 @@ const Home = () => {
     const getData = async () => {
       try {
         const data = await getInitialData(driverId);
-        if (data != null && data != undefined) {
+        if (data !== null && data !== undefined) {
           console.log(data);
         }
       } catch (err) {
