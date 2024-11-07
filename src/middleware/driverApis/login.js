@@ -5,7 +5,7 @@ import axios from "axios";
 const backendUrl = process.env.REACT_APP_BACKEND_API_URL;
 // driver login function
 const driverLogin = async (username, password) => {
-  try {
+    try {
     const response = await axios.post(
       `${backendUrl}/driver/login`,
       {
