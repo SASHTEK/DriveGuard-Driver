@@ -39,7 +39,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await getInitialData(setDriverId);
+        const data = await getInitialData(driverId);
         if (data !== null && data !== undefined) {
           console.log(data);
         }
@@ -48,11 +48,11 @@ const Home = () => {
       }
     };
 
-    if (setDriverId !== null){
+    if (driverId !== null){
         getData();
     }
     
-  }, [setDriverId]);
+  }, [driverId]);
 
   // Color change with offense level
   const [smartValue, setSmartValue] = useState(0); //Offense level
