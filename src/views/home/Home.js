@@ -24,7 +24,7 @@ const getColorChange = (number) => {
 };
 
 const Home = () => {
-  //Set user/ username
+  //Set user/ username (Display with Greeting)
   const [user, setUser] = useState("Guest");
   const [driverId, setDriverId] = useState(null);
 
@@ -132,7 +132,7 @@ const Home = () => {
   }, [smartValue]);
 
   //Color change based on number - CounterBoxes
-  const [responsePending, setResponsePending] = useState(1); //for CounterBox: Response Pending
+  const [responsePending, setResponsePending] = useState(2); //for CounterBox: Response Pending
   const [finesToBeSettled, setFinesToBeSettled] = useState(0); //for CounterBox: Fines to be setteled
 
   const colorChange1 = getColorChange(responsePending); //for CounterBox: Response Pending
@@ -148,7 +148,7 @@ const Home = () => {
       >
         <div className="greet">
           <h1>
-            Welcome, <span>{user},{driverId}</span>
+            Welcome, <span>{user}</span>
           </h1>
         </div>
 
