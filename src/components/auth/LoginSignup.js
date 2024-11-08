@@ -30,7 +30,7 @@ const LoginSignup = () => {
             if (username && password) {
                 const response = await driverLogin(username, password);
                 if (response.status === 200) {
-                    const userId = response.data.userId; 
+                    const userId = response.data.driverId; 
                     localStorage.setItem('userId', userId);
                     navigate('/home');
                 } 
