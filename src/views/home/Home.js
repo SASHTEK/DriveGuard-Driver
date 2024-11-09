@@ -32,7 +32,7 @@ const Home = () => {
 
   // Retrieve the userId from local storage
   useEffect(() => {
-    const storedUserId = localStorage.getItem("userId");
+    const storedUserId = localStorage.getItem("driverId");
     if (storedUserId) {
       setDriverId(storedUserId);
     }
@@ -44,7 +44,7 @@ const Home = () => {
       try {
         const data = await getInitialData(driverId);
         if (data !== null && data !== undefined) {
-          setUser(`${data.data.firstName} ${data.data.lastName}`);
+          setUser(data.data.firstName);
           setSmartValue(data.data.offenceLevel);
           setResponsePending(data.data.responsePending);
           setFinesToBeSettled(data.data.toBeSettled)
@@ -137,7 +137,7 @@ const Home = () => {
   }, [smartValue]);
 
   //Color change based on number - CounterBoxes
-  const [responsePending, setResponsePending] = useState(1); //for CounterBox: Response Pending
+  const [responsePending, setResponsePending] = useState(0); //for CounterBox: Response Pending
   const [finesToBeSettled, setFinesToBeSettled] = useState(0); //for CounterBox: Fines to be setteled
 
   const colorChange1 = getColorChange(responsePending); //for CounterBox: Response Pending
@@ -152,12 +152,7 @@ const Home = () => {
         className="page-content-home"
       >
         <div className="greet">
-          <h1>
-            Welcome,{" "}
-            <span>
-              {`${user}`}
-            </span>
-          </h1>
+          <h1>Welcome, <span>{user}</span></h1>
         </div>
 
         <div className="offense-status">

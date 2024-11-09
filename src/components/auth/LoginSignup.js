@@ -13,11 +13,6 @@ const LoginSignup = () => {
     const [password, setPassword] = useState("");
     const [drivingLicense, setDrivingLicense] = useState("");
     const [alertMessage, setAlertMessage] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [offecneLevel, setOffeceLevel] = useState();
-    const [responsePending, setResponsePending] = useState();
-    const [toBeSettled, setToBeSettled] = useState();
 
     // Navigate to Home page
     const navigate = useNavigate();
