@@ -24,7 +24,6 @@ const New = () => {
         setShowDetailBox(false);
     };
 
-
     
     return ( 
         <div className="container">
@@ -43,7 +42,7 @@ const New = () => {
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
                         {/* Offense data display here. */}
-                        <Card onClick={handleOpenDetailBox}/>
+                        <Card subject={"date"} message={"Offence Name"} onClick={handleOpenDetailBox}/>
                         <DetailBox show={showDetailBox} title={"Offence Details"} details={"Offence Description"} onAccept={handleAcceptButton} onReject={handleRejectButton}/>
                     </div>}
 

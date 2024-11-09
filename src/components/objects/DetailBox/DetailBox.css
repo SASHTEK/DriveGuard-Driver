@@ -12,7 +12,7 @@
   
   .detail-box-content {
     background-color: white;
-    padding: 20px;
+    padding: 40px;
     border-radius: 5px;
     text-align: center;
   }
@@ -20,7 +20,7 @@
   .on-click-proceed{
     margin: 10px;
     height: 35px;
-    background: rgb(15, 220, 52);
+    background: rgb(7, 150, 33);
     color: white;
     border-radius: 5px;
   }
