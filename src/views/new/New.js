@@ -24,7 +24,6 @@ const New = () => {
         setShowDetailBox(false);
     };
 
-    
     return ( 
         <div className="container">
             <HeaderBox headertext={"Alerts"}/>
