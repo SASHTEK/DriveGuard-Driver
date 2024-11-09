@@ -72,6 +72,30 @@ const getFine = async (fineId) => {
   }
 };
 
+//get witnessed fines
+const getWitnessedFines = async (driverId, fineStatus) => {
+  try {
+    const response = await axios.get(
+      `${backendUrl}/fine/get/fineStatus`,
+      {
+        params: {
+          driverId,fineStatus
+        },
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return response;
+  } catch (err) {
+    console.error("Error calling backend API: ", err);
+  }
+};
+
+
 // for make payment - will change fine status to paid and decrese offence level - 5th endpoint in document
 const makePayment = async (username, password) => {
   try {
@@ -94,4 +118,4 @@ const makePayment = async (username, password) => {
   }
 };
 
-export { getOffenceData, getFinesData, getFine, makePayment };
+export { getOffenceData, getFinesData, getFine, makePayment, getWitnessedFines };

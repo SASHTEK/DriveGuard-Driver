@@ -1,12 +1,28 @@
 import './New.css';
 import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../../components/objects/Card/Card';
+import { getFinesData, getWitnessedFines } from '../../middleware/driverApis/alertApis';
 
 const New = () => {
 
     const [switchTab,setSwitchTab] = useState("Fine");
+
+    useEffect(()=>{
+      
+            const getFineData = async() =>{
+                if(switchTab === "Fine"){
+                    const response = await getWitnessedFines(localStorage.getItem("driverId"), "witnessed")
+                    if(response !==null && response !== undefined ) {
+                        console.log(response)
+                    }
+                }
+             
+            }
+        
+        getFineData();
+    },[])
     
     return ( 
         <div className="container">

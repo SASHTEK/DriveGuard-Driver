@@ -48,7 +48,6 @@ const Home = () => {
           setSmartValue(data.data.offenceLevel);
           setResponsePending(data.data.responsePending);
           setFinesToBeSettled(data.data.toBeSettled)
-          console.log(data.data);
         }
       } catch (err) {
         console.error("Error fetching data: ", err);
