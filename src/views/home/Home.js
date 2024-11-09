@@ -24,14 +24,7 @@ const getColorChange = (number) => {
 };
 
 const Home = () => {
-  // variables to save data
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [offecneLevel, setOffeceLevel] = useState();
-  const [pending, setPending] = useState(); 
-  const [toBeSettled, setToBeSettled] = useState();
-
-  //Set user/ username
+  //Set user username
   const [user, setUser] = useState("Guest");
   const [driverId, setDriverId] = useState(null);
 
@@ -49,11 +42,10 @@ const Home = () => {
       try {
         const data = await getInitialData(driverId);
         if (data !== null && data !== undefined) {
-          setFirstName(data.data.firstName);
-          setLastName(data.data.lastName);
-          setOffeceLevel(data.data.offenceLevel);
-          setPending(data.data.responsePending);
-          setToBeSettled(data.data.toBeSettled)
+          setUser(`${data.data.firstName} ${data.data.lastName}`);
+          setSmartValue(data.data.offenceLevel);
+          setResponsePending(data.data.responsePending);
+          setFinesToBeSettled(data.data.toBeSettled)
           console.log(data.data);
         }
       } catch (err) {
@@ -63,7 +55,6 @@ const Home = () => {
 
     if (driverId !== null) {
       getData();
-      console.log(offecneLevel)
     }
   }, [driverId]);
 
@@ -163,7 +154,7 @@ const Home = () => {
           <h1>
             Welcome,{" "}
             <span>
-              {`${firstName} ${lastName}`}
+              {`${user}`}
             </span>
           </h1>
         </div>
@@ -174,7 +165,7 @@ const Home = () => {
             smartmessage={
               "This is the indication of your current offense level."
             }
-            smartvalue={offecneLevel}
+            smartvalue={smartValue}
             smarttitlebg={recommendation.smarttitlebg}
             smartboxbg={recommendation.smartboxbg}
             onChange={(value) => setSmartValue(value)}
@@ -197,7 +188,7 @@ const Home = () => {
             <Link to="/new">
               <CounterBox
                 text={"Response Pending"}
-                number={pending}
+                number={responsePending}
                 bgcolor={colorChange1.bgcolor}
                 textcolor={"black"}
                 roundcolor={colorChange1.roundcolor}
@@ -210,7 +201,7 @@ const Home = () => {
             <Link to="/new">
               <CounterBox
                 text={"Fines to be Settled"}
-                number={toBeSettled}
+                number={finesToBeSettled}
                 bgcolor={colorChange2.bgcolor}
                 textcolor={"black"}
                 roundcolor={colorChange2.roundcolor}

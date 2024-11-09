@@ -2,6 +2,7 @@ import './New.css';
 import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { useState } from 'react';
+import Card from '../../components/objects/Card/Card';
 
 const New = () => {
 
@@ -24,6 +25,7 @@ const New = () => {
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
                         {/* Offense data display here. */}
+                        <Card/>
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
