@@ -3,7 +3,7 @@ import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { useEffect, useState } from 'react';
 import Card from '../../components/objects/Card/Card';
-import { getFinesData, getFinesMatchStatus } from '../../middleware/driverApis/alertApis';
+import { getFinesData, getFinesMatchStatus, getWitnessedFines } from '../../middleware/driverApis/alertApis';
 
 const New = () => {
 
@@ -13,16 +13,20 @@ const New = () => {
     useEffect(()=>{
       
             const getFineData = async() =>{
-                if(switchTab === "Fine"){
+                if(switchTab === "Offence"){
                     const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "witnessed")
-                    if(response !==null && response !== undefined ) {
+                    if(response !==null && response !== undefined && response.status === 200 ) {
                         setResponseData(response.data);
+                    }else{
+                        setResponseData([]);
                     }
                 }
-                else if(switchTab === "Offense"){
+                else if(switchTab === "Fine"){
                     const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "accepted")
-                    if(response !==null && response !== undefined ) {
+                    if(response !==null && response !== undefined  && response.status === 200) {
                         setResponseData(response.data);
+                    }else{
+                        setResponseData([]);
                     }
                 }
             
@@ -31,6 +35,7 @@ const New = () => {
         
         getFineData();
     },[switchTab])
+    console.log(responseData)
     
     return ( 
         <div className="container">
@@ -40,8 +45,8 @@ const New = () => {
 
                 <div className='new-tab-navigation-area'>
                     <div className='new-tab-container'>
-                        <div className={switchTab==="Offense"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Fine")}}>Offense</div>
-                        <div className={switchTab==="Fine"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Offense")}}>Fine</div>
+                        <div className={switchTab==="Offense"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Offence")}}>Offense</div>
+                        <div className={switchTab==="Fine"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Fine")}}>Fine</div>
                     </div>
                 </div>
 
@@ -49,14 +54,21 @@ const New = () => {
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
                         {/* Offense data display here. */}
-                        <Card/>
+                        {responseData.map(fine =>(
+                            <div>
+                                <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
+                               
+                            </div>
+                        ))}
+
+                       
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
                     <div className="new-fine">
                         {/* Fine data display here. */}
                         {responseData.map(fine =>(
-                            <Card key={fine.fineId}/>
+                               <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
                         ))}
                     </div>}
                 </div>
