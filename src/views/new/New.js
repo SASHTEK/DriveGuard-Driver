@@ -3,10 +3,28 @@ import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { useState } from 'react';
 import Card from '../../components/objects/Card/Card';
+import DetailBox from '../../components/objects/DetailBox/DetailBox';
 
 const New = () => {
 
     const [switchTab,setSwitchTab] = useState("Fine");
+
+    //Show Detail Box
+    const [showDetailBox, setShowDetailBox] = useState(false);
+
+    const handleOpenDetailBox = () => {
+        setShowDetailBox(true);
+    };
+
+    const handleAcceptButton = () => {
+        setShowDetailBox(false);
+    };
+
+    const handleRejectButton = () => {
+        setShowDetailBox(false);
+    };
+
+
     
     return ( 
         <div className="container">
@@ -25,7 +43,8 @@ const New = () => {
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
                         {/* Offense data display here. */}
-                        <Card/>
+                        <Card onClick={handleOpenDetailBox}/>
+                        <DetailBox show={showDetailBox} title={"Offence Details"} details={"Offence Description"} onAccept={handleAcceptButton} onReject={handleRejectButton}/>
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
