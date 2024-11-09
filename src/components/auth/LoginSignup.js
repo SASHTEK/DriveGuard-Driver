@@ -13,11 +13,6 @@ const LoginSignup = () => {
     const [password, setPassword] = useState("");
     const [drivingLicense, setDrivingLicense] = useState("");
     const [alertMessage, setAlertMessage] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [offecneLevel, setOffeceLevel] = useState();
-    const [responsePending, setResponsePending] = useState();
-    const [toBeSettled, setToBeSettled] = useState();
 
     // Navigate to Home page
     const navigate = useNavigate();
@@ -27,7 +22,6 @@ const LoginSignup = () => {
         await login(username, password);
     };
     
-
     // login function
     const login = async (username, password) => {
         try {
@@ -41,8 +35,6 @@ const LoginSignup = () => {
                         navigate('/home');
                     } 
                 }
-                
-
             } else {
                 console.log("Username and Password are required.");
                 setAlertMessage("Username and Password cannot be empty!");

@@ -24,15 +24,14 @@ const getColorChange = (number) => {
 };
 
 const Home = () => {
-
-
+  
   //Set user/ username
   const [user, setUser] = useState("Guest");
   const [driverId, setDriverId] = useState(null);
 
   // Retrieve the userId from local storage
   useEffect(() => {
-    const storedUserId = localStorage.getItem("userId");
+    const storedUserId = localStorage.getItem("driverId");
     if (storedUserId) {
       setDriverId(storedUserId);
     }
