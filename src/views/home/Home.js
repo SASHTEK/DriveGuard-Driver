@@ -51,7 +51,7 @@ const Home = () => {
         if (data !== null && data !== undefined) {
           setFirstName(data.data.firstName);
           setLastName(data.data.lastName);
-          setOffeceLevel(data.data.offecneLevel);
+          setOffeceLevel(data.data.offenceLevel);
           setPending(data.data.responsePending);
           setToBeSettled(data.data.toBeSettled)
           console.log(data.data);
@@ -63,6 +63,7 @@ const Home = () => {
 
     if (driverId !== null) {
       getData();
+      console.log(offecneLevel)
     }
   }, [driverId]);
 
@@ -173,7 +174,7 @@ const Home = () => {
             smartmessage={
               "This is the indication of your current offense level."
             }
-            smartvalue={smartValue}
+            smartvalue={offecneLevel}
             smarttitlebg={recommendation.smarttitlebg}
             smartboxbg={recommendation.smartboxbg}
             onChange={(value) => setSmartValue(value)}
@@ -196,7 +197,7 @@ const Home = () => {
             <Link to="/new">
               <CounterBox
                 text={"Response Pending"}
-                number={responsePending}
+                number={pending}
                 bgcolor={colorChange1.bgcolor}
                 textcolor={"black"}
                 roundcolor={colorChange1.roundcolor}
@@ -209,7 +210,7 @@ const Home = () => {
             <Link to="/new">
               <CounterBox
                 text={"Fines to be Settled"}
-                number={finesToBeSettled}
+                number={toBeSettled}
                 bgcolor={colorChange2.bgcolor}
                 textcolor={"black"}
                 roundcolor={colorChange2.roundcolor}
