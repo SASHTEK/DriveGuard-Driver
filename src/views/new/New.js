@@ -3,7 +3,8 @@ import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { useEffect, useState } from 'react';
 import Card from '../../components/objects/Card/Card';
-import { getFinesData, getFinesMatchStatus, getWitnessedFines } from '../../middleware/driverApis/alertApis';
+import { getFinesData, getFinesMatchStatus } from '../../middleware/driverApis/alertApis';
+import detailBox from '../../components/objects/DetailBox/DetailBox';
 
 const New = () => {
 
@@ -29,13 +30,12 @@ const New = () => {
                         setResponseData([]);
                     }
                 }
-            
-             
             }
         
         getFineData();
     },[switchTab])
-    console.log(responseData)
+
+    // card click function
     
     return ( 
         <div className="container">
@@ -51,26 +51,15 @@ const New = () => {
                 </div>
 
                 <div className='new-data-view'>
-                    {switchTab==="Offense"?<div></div>:
-                    <div className="new-offense">
+                    {<div className="new-offense">
                         {/* Offense data display here. */}
                         {responseData.map(fine =>(
-                            <div>
                                 <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
-                               
-                            </div>
-                        ))}
+                        ))}                       
+                    </div>
+                    }
 
-                       
-                    </div>}
-
-                    {switchTab==="Fine"?<div></div>:
-                    <div className="new-fine">
-                        {/* Fine data display here. */}
-                        {responseData.map(fine =>(
-                               <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
-                        ))}
-                    </div>}
+               
                 </div>
 
             </div> 
