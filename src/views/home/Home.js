@@ -24,15 +24,23 @@ const getColorChange = (number) => {
 };
 
 const Home = () => {
+  // variables to save data
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [offecneLevel, setOffeceLevel] = useState();
+  const [pending, setPending] = useState(); 
+  const [toBeSettled, setToBeSettled] = useState();
+
   //Set user/ username
   const [user, setUser] = useState("Guest");
   const [driverId, setDriverId] = useState(null);
 
   // Retrieve the userId from local storage
-  useEffect(() => {const storedUserId = localStorage.getItem('userId'); 
-    if (storedUserId) { 
-      setDriverId(storedUserId); 
-    } 
+  useEffect(() => {
+    const storedUserId = localStorage.getItem("userId");
+    if (storedUserId) {
+      setDriverId(storedUserId);
+    }
   }, []);
 
   // get driver data
@@ -41,17 +49,21 @@ const Home = () => {
       try {
         const data = await getInitialData(driverId);
         if (data !== null && data !== undefined) {
-          console.log(data);
+          setFirstName(data.data.firstName);
+          setLastName(data.data.lastName);
+          setOffeceLevel(data.data.offecneLevel);
+          setPending(data.data.responsePending);
+          setToBeSettled(data.data.toBeSettled)
+          console.log(data.data);
         }
       } catch (err) {
         console.error("Error fetching data: ", err);
       }
     };
 
-    if (driverId !== null){
-        getData();
+    if (driverId !== null) {
+      getData();
     }
-    
   }, [driverId]);
 
   // Color change with offense level
@@ -148,7 +160,10 @@ const Home = () => {
       >
         <div className="greet">
           <h1>
-            Welcome, <span>{user},{driverId}</span>
+            Welcome,{" "}
+            <span>
+              {`${firstName} ${lastName}`}
+            </span>
           </h1>
         </div>
 

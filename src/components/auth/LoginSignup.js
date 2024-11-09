@@ -13,6 +13,11 @@ const LoginSignup = () => {
     const [password, setPassword] = useState("");
     const [drivingLicense, setDrivingLicense] = useState("");
     const [alertMessage, setAlertMessage] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [offecneLevel, setOffeceLevel] = useState();
+    const [responsePending, setResponsePending] = useState();
+    const [toBeSettled, setToBeSettled] = useState();
 
     // Navigate to Home page
     const navigate = useNavigate();
@@ -29,11 +34,14 @@ const LoginSignup = () => {
             // Check if username and password are provided
             if (username && password) {
                 const response = await driverLogin(username, password);
-                if (response.status === 200) {
-                    const userId = response.data.driverId; 
-                    localStorage.setItem('userId', userId);
-                    navigate('/home');
-                } 
+                if(response !== undefined){
+                    if (response.status === 200) {
+                        const userId = response.data.driverId; 
+                        localStorage.setItem('userId', userId);
+                        navigate('/home');
+                    } 
+                }
+                
 
             } else {
                 console.log("Username and Password are required.");
