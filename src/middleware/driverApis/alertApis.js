@@ -73,7 +73,7 @@ const getFine = async (fineId) => {
 };
 
 //get witnessed fines
-const getWitnessedFines = async (driverId, fineStatus) => {
+const getFinesMatchStatus = async (driverId, fineStatus) => {
   try {
     const response = await axios.get(
       `${backendUrl}/fine/get/fineStatus`,
@@ -118,4 +118,4 @@ const makePayment = async (username, password) => {
   }
 };
 
-export { getOffenceData, getFinesData, getFine, makePayment, getWitnessedFines };
+export { getOffenceData, getFinesData, getFine, makePayment,getFinesMatchStatus };

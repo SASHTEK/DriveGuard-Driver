@@ -3,26 +3,34 @@ import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { useEffect, useState } from 'react';
 import Card from '../../components/objects/Card/Card';
-import { getFinesData, getWitnessedFines } from '../../middleware/driverApis/alertApis';
+import { getFinesData, getFinesMatchStatus, getWitnessedFines } from '../../middleware/driverApis/alertApis';
 
 const New = () => {
 
     const [switchTab,setSwitchTab] = useState("Fine");
+    const [responseData, setResponseData] = useState([]);
 
     useEffect(()=>{
       
             const getFineData = async() =>{
                 if(switchTab === "Fine"){
-                    const response = await getWitnessedFines(localStorage.getItem("driverId"), "witnessed")
+                    const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "witnessed")
                     if(response !==null && response !== undefined ) {
-                        console.log(response)
+                        setResponseData(response.data);
                     }
                 }
+                else if(switchTab === "Offense"){
+                    const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "accepted")
+                    if(response !==null && response !== undefined ) {
+                        setResponseData(response.data);
+                    }
+                }
+            
              
             }
         
         getFineData();
-    },[])
+    },[switchTab])
     
     return ( 
         <div className="container">
@@ -41,12 +49,19 @@ const New = () => {
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
                         {/* Offense data display here. */}
-                        <Card/>
+                        {responseData.map(fine =>(
+                            <Card key={fine.fineId}/>
+                        ))}
+
+                       
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
                     <div className="new-fine">
                         {/* Fine data display here. */}
+                        {responseData.map(fine =>(
+                            <Card key={fine.fineId}/>
+                        ))}
                     </div>}
                 </div>
 
