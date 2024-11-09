@@ -37,7 +37,7 @@ const LoginSignup = () => {
                 if(response !== undefined){
                     if (response.status === 200) {
                         const userId = response.data.driverId; 
-                        localStorage.setItem('userId', userId);
+                        localStorage.setItem('driverId', userId);
                         navigate('/home');
                     } 
                 }
