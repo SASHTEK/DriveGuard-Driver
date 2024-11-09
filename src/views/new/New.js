@@ -3,11 +3,12 @@ import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { useEffect, useState } from 'react';
 import Card from '../../components/objects/Card/Card';
-import { getFinesData, getWitnessedFines } from '../../middleware/driverApis/alertApis';
+import { getFinesData, getFinesMatchStatus } from '../../middleware/driverApis/alertApis';
 
 const New = () => {
 
     const [switchTab,setSwitchTab] = useState("Fine");
+    const [responseData, setResponseData] = useState([]);
 
     useEffect(()=>{
       
