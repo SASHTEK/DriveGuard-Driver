@@ -3,12 +3,11 @@ import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { useEffect, useState } from 'react';
 import Card from '../../components/objects/Card/Card';
-import { getFinesData, getFinesMatchStatus, getWitnessedFines } from '../../middleware/driverApis/alertApis';
+import { getFinesData, getWitnessedFines } from '../../middleware/driverApis/alertApis';
 
 const New = () => {
 
     const [switchTab,setSwitchTab] = useState("Fine");
-    const [responseData, setResponseData] = useState([]);
 
     useEffect(()=>{
       
@@ -49,11 +48,7 @@ const New = () => {
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
                         {/* Offense data display here. */}
-                        {responseData.map(fine =>(
-                            <Card key={fine.fineId}/>
-                        ))}
-
-                       
+                        <Card/>
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
