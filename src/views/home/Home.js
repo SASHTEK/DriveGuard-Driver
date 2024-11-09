@@ -25,11 +25,11 @@ const getColorChange = (number) => {
 
 const Home = () => {
   // variables to save data
-  const [firstName, setFirstName] = useState("");
+  const [firstName, setFirstName] = useState("Guest");
   const [lastName, setLastName] = useState("");
-  const [offecneLevel, setOffeceLevel] = useState();
-  const [pending, setPending] = useState(); 
-  const [toBeSettled, setToBeSettled] = useState();
+  const [offecneLevel, setOffeceLevel] = useState(0);
+  const [pending, setPending] = useState(0); 
+  const [toBeSettled, setToBeSettled] = useState(0);
 
   //Set user/ username
   const [user, setUser] = useState("Guest");
