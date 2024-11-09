@@ -24,7 +24,9 @@ const getColorChange = (number) => {
 };
 
 const Home = () => {
-  //Set user username
+
+
+  //Set user/ username
   const [user, setUser] = useState("Guest");
   const [driverId, setDriverId] = useState(null);
 
