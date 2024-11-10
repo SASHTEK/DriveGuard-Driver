@@ -1,4 +1,5 @@
-import './DetailBox.css'
+import './DetailBox.css';
+
 function detailBox({ show, title, details, onAccept, onReject }) {
     if (!show) {
       return null;

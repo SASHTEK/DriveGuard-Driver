@@ -12,8 +12,8 @@ const New = () => {
     const [responseData, setResponseData] = useState([]);
 
     useEffect(()=>{
-      
             const getFineData = async() =>{
+               
                 if(switchTab === "Offence"){
                     const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "witnessed")
                     if(response !==null && response !== undefined && response.status === 200 ) {
@@ -22,6 +22,7 @@ const New = () => {
                         setResponseData([]);
                     }
                 }
+
                 else if(switchTab === "Fine"){
                     const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "accepted")
                     if(response !==null && response !== undefined  && response.status === 200) {
@@ -36,7 +37,6 @@ const New = () => {
     },[switchTab])
 
     // card click function
-    
     return ( 
         <div className="container">
             <HeaderBox headertext={"Alerts"}/>
@@ -54,12 +54,10 @@ const New = () => {
                     {<div className="new-offense">
                         {/* Offense data display here. */}
                         {responseData.map(fine =>(
-                                <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
+                            <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
                         ))}                       
                     </div>
                     }
-
-               
                 </div>
 
             </div> 
