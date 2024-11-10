@@ -1,11 +1,16 @@
 import './Card.css';
-const Card = ({subject, message, subbgcolor, subtextcolor, msgbgcolor, msgtextcolor, onClick}) => {
+const Card = ({subject, message, message2, message3, message4, message5, subbgcolor, subtextcolor, msgbgcolor, msgtextcolor, onOk, onCancel}) => {
     return ( 
-        <div className='card' onClick={onClick}>
-            <div className='card-subject' style={{background: subbgcolor, color: subtextcolor}}>{subject}
-            </div>
+        <div className='card'>
+            <div className='card-subject' style={{background: subbgcolor, color: subtextcolor}}>{subject}</div>
             <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message}</div>
-            </div>
+            <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message2}</div>
+            <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message3}</div>
+            <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message4}</div>
+            <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message5}</div>
+            <button className="on-click-Ok" onClick={onOk}>Accept</button>
+            <button className="on-click-Cancel" onClick={onCancel}>Reject</button>
+        </div>
      );
 }
  
