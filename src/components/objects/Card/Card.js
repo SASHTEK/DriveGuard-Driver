@@ -8,8 +8,11 @@ const Card = ({subject, message, message2, message3, message4, message5, subbgco
             <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message3}</div>
             <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message4}</div>
             <div className='card-message' style={{background: msgbgcolor, color: msgtextcolor}}>{message5}</div>
-            <button className="on-click-Ok" onClick={onOk}>Accept</button>
-            <button className="on-click-Cancel" onClick={onCancel}>Reject</button>
+            <div className='card-button-area'>
+                <button className="on-click-Ok" onClick={onOk}>Accept</button>
+                <button className="on-click-Cancel" onClick={onCancel}>Reject</button>
+            </div>
+            
         </div>
      );
 }
