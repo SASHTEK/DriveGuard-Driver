@@ -160,7 +160,7 @@ const New = () => {
     getFineData();
   }, [switchTab]);
 
-
+console.log(responseData)
   // card click function
   return (
     <div className="container">
@@ -207,7 +207,7 @@ const New = () => {
                   <Card
                     subject={fine.fineDate}
                     message={fine.fineName}
-                    message2={"Detail 2"}
+                    message2={fine.fineDescription}
                     message3={"Detail 3"}
                     message4={"Detail 4"}
                     message5={"Detail 5"}
