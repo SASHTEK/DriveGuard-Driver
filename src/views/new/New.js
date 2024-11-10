@@ -208,8 +208,12 @@ const New = () => {
                   <Card
                     subject={fine.fineDate}
                     message={fine.fineName}
-                    msgbgcolor={"rgb(205, 150, 13)"}
-                    onClick={handleOpenDetailBoxOffence}
+                    message2={"Detail 2"}
+                    message3={"Detail 3"}
+                    message4={"Detail 4"}
+                    message5={"Detail 5"}
+                    msgtextcolor={"Black"}
+                    msgbgcolor={"rgb(181, 181, 181)"}
                   />{" "}
                   {/*for Offences*/}
                   <DetailBox
