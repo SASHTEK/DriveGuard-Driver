@@ -7,6 +7,7 @@ import "react-clock/dist/Clock.css";
 import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { getHistory } from "../../middleware/driverApis/historyApis";
+import DataCard from "../../components/objects/DataCard/DataCard";
 
 // Browse History List
 const options = [
@@ -60,12 +61,11 @@ const History = () => {
       <HeaderBox headertext={"Offense History"} />
 
       <div className="page-content-history">
-        <div className="indicator">
+        {/* <div className="indicator">
           <h2>Offense Summary</h2>
           <div className="offense-summary">
-            {/* Display offense summary list here */}
           </div>
-        </div>
+        </div> */}
 
         <div className="history-list-view">
           <h2>Browse History</h2>
@@ -105,10 +105,14 @@ const History = () => {
    
                 {histroyData.map((historyDatum) => (
                   <div>
-                    <h3>{historyDatum.fineName}</h3>
-                    <h4>{historyDatum.fineDescription}</h4>
-                    <h5>{historyDatum.fineAmount}</h5>
-                    <p>{historyDatum.fineDate}</p>
+                    <DataCard
+                      subject={historyDatum.fineDate}
+                      message={historyDatum.fineName}
+                      message2={historyDatum.fineDescription}
+                      message3={historyDatum.fineAmount}
+                      msgtextcolor={"Black"}
+                      msgbgcolor={"rgb(181, 181, 181)"}
+                    />
                   </div>
                 ))}
  
