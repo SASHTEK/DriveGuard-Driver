@@ -14,7 +14,7 @@
 //     const [responseData, setResponseData] = useState([]);
 
 //     useEffect(()=>{
-      
+
 //             const getFineData = async() =>{
 //                 if(switchTab === "Offence"){
 //                     const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "witnessed")
@@ -33,17 +33,17 @@
 //                     }
 //                 }
 //             }
-        
+
 //         getFineData();
 //     },[switchTab])
 
 //     // card click function
-    
-//     return ( 
+
+//     return (
 //         <div className="container">
 //             <HeaderBox headertext={"Alerts"}/>
 
-//             <div  style={{background: switchTab === "Fine" ? 'linear-gradient(to right, rgb(128, 188, 236), transparent)' : 'linear-gradient(to left, rgb(128, 188, 236), transparent)'}} className='page-content-new'> 
+//             <div  style={{background: switchTab === "Fine" ? 'linear-gradient(to right, rgb(128, 188, 236), transparent)' : 'linear-gradient(to left, rgb(128, 188, 236), transparent)'}} className='page-content-new'>
 
 //                 <div className='new-tab-navigation-area'>
 //                     <div className='new-tab-container'>
@@ -57,94 +57,206 @@
 //                         {/* Offense data display here. */}
 //                         {responseData.map(fine =>(
 //                                 <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
-//                         ))}                       
+//                         ))}
 //                     </div>
 //                     }
 
-               
 //                 </div>
 
-//             </div> 
+//             </div>
 
 //             <TabNavigation bgnew={"rgb(10, 55, 202)"}/>
 //         </div>
 //      );
 // }
- 
+
 // export default New;
 
 //My (Shashika) original code
 
-import './New.css';
+import "./New.css";
 import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
-import { useEffect, useState } from 'react';
-import Card from '../../components/objects/Card/Card';
-import DetailBox from '../../components/objects/DetailBox/DetailBox';
-import {getFinesMatchStatus} from '../../middleware/driverApis/alertApis';
+import { useEffect, useState } from "react";
+import Card from "../../components/objects/Card/Card";
+import DetailBox from "../../components/objects/DetailBox/DetailBox";
+import { getFinesMatchStatus } from "../../middleware/driverApis/alertApis";
 
 const New = () => {
+  const [switchTab, setSwitchTab] = useState("Fine");
+  const [responseData, setResponseData] = useState([]);
+  //Offence Area
+  //Show Detail Box - Offence
+  const [showDetailBoxOffence, setShowDetailBoxOffence] = useState(false);
 
-    const [switchTab,setSwitchTab] = useState("Fine");
-    const [responseData, setResponseData] = useState([]);
+  //Handle Display Detail Box - Offence
+  const handleOpenDetailBoxOffence = () => {
+    setShowDetailBoxOffence(true);
+  };
 
-    useEffect(()=>{
-            const getFineData = async() =>{
-               
-                if(switchTab === "Fine"){
-                    const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "witnessed")
-                    if(response !==null && response !== undefined && response.status === 200 ) {
-                        setResponseData(response.data);
-                    }else{
-                        setResponseData([]);
-                    }
-                }
+  //Accept button action - Display box - offence
+  const handleAcceptButtonOffence = () => {
+    setShowDetailBoxOffence(false);
+  };
 
-                else if(switchTab === "Fine"){
-                    const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "accepted")
-                    if(response !==null && response !== undefined  && response.status === 200) {
-                        setResponseData(response.data);
-                    }else{
-                        setResponseData([]);
-                    }
-                }
-            }
-        
-        getFineData();
-    },[switchTab])
+  //Reject button action - Display box - offence
+  const handleRejectButtonOffence = () => {
+    setShowDetailBoxOffence(false);
+  };
 
-    console.log(responseData);
+  //Fine Area
+  //Show Detail Box - Fine
+  const [showDetailBoxFine, setShowDetailBoxFine] = useState(false);
 
-    // card click function
-    return ( 
-        <div className="container">
-            <HeaderBox headertext={"Alerts"}/>
+  //Handle Display Detail Box - Fine
+  const handleOpenDetailBoxFine = () => {
+    setShowDetailBoxFine(true);
+  };
 
-            <div  style={{background: switchTab === "Fine" ? 'linear-gradient(to right, rgb(128, 188, 236), transparent)' : 'linear-gradient(to left, rgb(128, 188, 236), transparent)'}} className='page-content-new'> 
+  //Accept button action - Display box - Fine
+  const handleAcceptButtonFine = () => {
+    setShowDetailBoxFine(false);
+  };
 
-                <div className='new-tab-navigation-area'>
-                    <div className='new-tab-container'>
-                        <div className={switchTab==="Offense"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Fine")}}>Offense</div>
-                        <div className={switchTab==="Fine"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Offense")}}>Fine</div>
-                    </div>
-                </div>
+  //Reject button action - Display box - Fine
+  const handleRejectButtonFine = () => {
+    setShowDetailBoxFine(false);
+  };
 
-                <div className='new-data-view'>
-                    {switchTab==="Offense"?<div></div>:
-                    <div className="new-offense">
-                        {/* Offense data display here. */}
-                        {responseData.map(fine =>(
-                            <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
-                        ))}                       
-                    </div>
-                    }
-                </div>
+  useEffect(() => {
+    const getFineData = async () => {
+      if (switchTab === "Fine") {
+        const response = await getFinesMatchStatus(
+          localStorage.getItem("driverId"),
+          "witnessed"
+        );
+        if (
+          response !== null &&
+          response !== undefined &&
+          response.status === 200
+        ) {
+          setResponseData(response.data);
+        } else {
+          setResponseData([]);
+        }
+      } else if (switchTab === "Offense") {
+        const response = await getFinesMatchStatus(
+          localStorage.getItem("driverId"),
+          "accepted"
+        );
+        if (
+          response !== null &&
+          response !== undefined &&
+          response.status === 200
+        ) {
+          setResponseData(response.data);
+        } else {
+          setResponseData([]);
+        }
+      }
+    };
 
-            </div> 
+    getFineData();
+  }, [switchTab]);
 
-            <TabNavigation bgnew={"rgb(10, 55, 202)"}/>
+  console.log(responseData);
+
+  // card click function
+  return (
+    <div className="container">
+      <HeaderBox headertext={"Alerts"} />
+
+      <div
+        style={{
+          background:
+            switchTab === "Fine"
+              ? "linear-gradient(to right, rgb(128, 188, 236), transparent)"
+              : "linear-gradient(to left, rgb(128, 188, 236), transparent)",
+        }}
+        className="page-content-new"
+      >
+        <div className="new-tab-navigation-area">
+          <div className="new-tab-container">
+            <div
+              className={switchTab === "Offense" ? "tab gray-new" : "tab-new"}
+              onClick={() => {
+                setSwitchTab("Fine");
+              }}
+            >
+              Offense
+            </div>
+            <div
+              className={switchTab === "Fine" ? "tab gray-new" : "tab-new"}
+              onClick={() => {
+                setSwitchTab("Offense");
+              }}
+            >
+              Fine
+            </div>
+          </div>
         </div>
-     );
-}
- 
+
+        <div className="new-data-view">
+          {switchTab === "Offense" ? (
+            <div></div>
+          ) : (
+            <div className="new-offense">
+              {/* Offense data display here. */}
+              {responseData.map((fine) => (
+                <div key={fine.fineId}>
+                  <Card
+                    subject={fine.fineDate}
+                    message={fine.fineName}
+                    msgbgcolor={"rgb(205, 150, 13)"}
+                    onClick={handleOpenDetailBoxOffence}
+                  />{" "}
+                  {/*for Offences*/}
+                  <DetailBox
+                    show={showDetailBoxOffence}
+                    title={"Offence Details"}
+                    details={"Offence Description"}
+                    onAccept={handleAcceptButtonOffence}
+                    onReject={handleRejectButtonOffence}
+                  />
+                </div>
+              ))}
+              ;
+            </div>
+          )}
+
+          {switchTab === "Fine" ? (
+            <div></div>
+          ) : (
+            <div className="new-fine">
+              {/* Fine data display here. */}
+              {responseData.map((fine) => (
+                <div key={fine.fineId}>
+                  <Card
+                    subject={fine.fineDate}
+                    message={fine.fineName}
+                    msgbgcolor={"rgb(205, 150, 13)"}
+                    onClick={handleOpenDetailBoxOffence}
+                  />{" "}
+                  {/*for Offences*/}
+                  <DetailBox
+                    show={showDetailBoxOffence}
+                    title={"Offence Details"}
+                    details={"Offence Description"}
+                    onAccept={handleAcceptButtonOffence}
+                    onReject={handleRejectButtonOffence}
+                  />
+                </div>
+              ))}
+              ;
+              {/* Offense data display here. */}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <TabNavigation bgnew={"rgb(10, 55, 202)"} />
+    </div>
+  );
+};
+
 export default New;
