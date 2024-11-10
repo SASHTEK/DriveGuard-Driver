@@ -55,6 +55,7 @@
     max-height: 601px;
     overflow:auto;
     padding-top: 5%;
+    padding-bottom: 5%;
     border-radius: 10px;
     background: rgb(255, 255, 255);
 }
@@ -66,6 +67,7 @@
     max-height: 601px;
     overflow:auto;
     padding-top: 5%;
+    padding-bottom: 5%;
     border-radius: 10px;
     background: rgb(255, 255, 255);
 }

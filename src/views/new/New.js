@@ -86,19 +86,42 @@ const New = () => {
 
     const [switchTab,setSwitchTab] = useState("Fine");
 
-    //Show Detail Box
-    const [showDetailBox, setShowDetailBox] = useState(false);
+    //Offence Area
+    //Show Detail Box - Offence
+    const [showDetailBoxOffence, setShowDetailBoxOffence] = useState(false);
 
-    const handleOpenDetailBox = () => {
-        setShowDetailBox(true);
+    //Handle Display Detail Box - Offence
+    const handleOpenDetailBoxOffence = () => {
+        setShowDetailBoxOffence(true);
     };
 
-    const handleAcceptButton = () => {
-        setShowDetailBox(false);
+    //Accept button action - Display box - offence
+    const handleAcceptButtonOffence = () => {
+        setShowDetailBoxOffence(false);
     };
 
-    const handleRejectButton = () => {
-        setShowDetailBox(false);
+    //Reject button action - Display box - offence
+    const handleRejectButtonOffence = () => {
+        setShowDetailBoxOffence(false);
+    };
+
+    //Fine Area
+    //Show Detail Box - Fine
+    const [showDetailBoxFine, setShowDetailBoxFine] = useState(false);
+
+    //Handle Display Detail Box - Fine
+    const handleOpenDetailBoxFine = () => {
+        setShowDetailBoxFine(true);
+    };
+
+    //Accept button action - Display box - Fine
+    const handleAcceptButtonFine = () => {
+        setShowDetailBoxFine(false);
+    };
+
+    //Reject button action - Display box - Fine
+    const handleRejectButtonFine = () => {
+        setShowDetailBoxFine(false);
     };
 
     return ( 
@@ -118,13 +141,17 @@ const New = () => {
                     {switchTab==="Offense"?<div></div>:
                     <div className="new-offense">
                         {/* Offense data display here. */}
-                        <Card subject={"date"} message={"Offence Name"} onClick={handleOpenDetailBox}/>
-                        <DetailBox show={showDetailBox} title={"Offence Details"} details={"Offence Description"} onAccept={handleAcceptButton} onReject={handleRejectButton}/>
+                        <Card subject={"date"} message={"Offence Name"} msgbgcolor={'rgb(205, 150, 13)'} onClick={handleOpenDetailBoxOffence}/> {/*for Offences*/}
+                        <DetailBox show={showDetailBoxOffence} title={"Offence Details"} details={"Offence Description"} onAccept={handleAcceptButtonOffence} onReject={handleRejectButtonOffence}/>
+                        {/* Offense data display here. */}
                     </div>}
 
                     {switchTab==="Fine"?<div></div>:
                     <div className="new-fine">
                         {/* Fine data display here. */}
+                        <Card subject={"date"} message={"Offence Name"} msgbgcolor={'rgb(179, 13, 13)'} onClick={handleOpenDetailBoxFine}/> {/*for fines*/}
+                        <DetailBox show={showDetailBoxFine} title={"Fine Details"} details={"Fine Description"} onAccept={handleAcceptButtonFine} onReject={handleRejectButtonFine}/>
+                        {/* Offense data display here. */}
                     </div>}
                 </div>
 
