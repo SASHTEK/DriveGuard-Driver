@@ -1,20 +1,30 @@
-import './DetailBox.css';
+import "./DetailBox.css";
+import { getFine } from "../../../middleware/driverApis/alertApis";
+import { useEffect } from "react";
 
-function detailBox({ show, title, details, onAccept, onReject }) {
-    if (!show) {
-      return null;
-    }
+function DetailBox({ show, title, details, onAccept, onReject, fineId }) {
+  console.log(fineId)
+
   
-    return (
-      <div className="detail-box">
-        <div className="detail-box-content">
-          <h2>{title}</h2>
-          <p>{details}</p>
-          <button className='on-click-proceed' onClick={onAccept}>Accept</button>
-          <button className='on-click-cancel' onClick={onReject}>Reject</button>
-        </div>
-      </div>
-    );
+
+  if (!show) {
+    return null;
   }
-  
-  export default detailBox;
+
+  return (
+    <div className="detail-box">
+      <div className="detail-box-content">
+        <h2>{title}</h2>
+        <p>{details}</p>
+        <button className="on-click-proceed" onClick={onAccept}>
+          Accept
+        </button>
+        <button className="on-click-cancel" onClick={onReject}>
+          Reject
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default DetailBox;

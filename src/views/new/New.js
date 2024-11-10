@@ -92,6 +92,7 @@ const New = () => {
   //Handle Display Detail Box - Offence
   const handleOpenDetailBoxOffence = () => {
     setShowDetailBoxOffence(true);
+    
   };
 
   //Accept button action - Display box - offence
@@ -213,14 +214,15 @@ const New = () => {
                   {/*for Offences*/}
                   <DetailBox
                     show={showDetailBoxOffence}
-                    title={"Offence Details"}
-                    details={"Offence Description"}
+                    title={fine.fineName}
+                    details={fine.fineDescription}
+                    fineId={fine.fineId}
                     onAccept={handleAcceptButtonOffence}
                     onReject={handleRejectButtonOffence}
                   />
                 </div>
               ))}
-              ;
+
             </div>
           )}
 
@@ -240,8 +242,9 @@ const New = () => {
                   {/*for Offences*/}
                   <DetailBox
                     show={showDetailBoxOffence}
-                    title={"Offence Details"}
-                    details={"Offence Description"}
+                    title={fine.fineName}
+                    details={fine.fineDescription}
+                    fineId={fine.fineId}
                     onAccept={handleAcceptButtonOffence}
                     onReject={handleRejectButtonOffence}
                   />
