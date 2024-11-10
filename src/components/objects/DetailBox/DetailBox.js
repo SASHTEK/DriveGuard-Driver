@@ -3,7 +3,6 @@ import { getFine } from "../../../middleware/driverApis/alertApis";
 import { useEffect } from "react";
 
 function DetailBox({ show, title, details, onAccept, onReject, fineId }) {
-  console.log(fineId)
 
   
 

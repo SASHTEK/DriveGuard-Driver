@@ -118,4 +118,27 @@ const makePayment = async (username, password) => {
   }
 };
 
-export { getOffenceData, getFinesData, getFine, makePayment,getFinesMatchStatus };
+// make fine accept
+const acceptFine = async (fineId) => {
+  try {
+    const response = await axios.get(
+      `${backendUrl}/fine/acceptFine`,
+      {
+        params: {
+          fineId
+        },
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return response;
+  } catch (err) {
+    console.error("Error calling backend API: ", err);
+  }
+};
+
+export { getOffenceData, getFinesData, getFine, makePayment,getFinesMatchStatus, acceptFine };
