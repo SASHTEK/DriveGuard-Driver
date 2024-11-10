@@ -1,79 +1,3 @@
-// Your (Ayesh) codes
-
-// import './New.css';
-// import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
-// import TabNavigation from "../../components/navbar/TabNavigation";
-// import { useEffect, useState } from 'react';
-// import Card from '../../components/objects/Card/Card';
-// import { getFinesData, getFinesMatchStatus } from '../../middleware/driverApis/alertApis';
-// import detailBox from '../../components/objects/DetailBox/DetailBox';
-
-// const New = () => {
-
-//     const [switchTab,setSwitchTab] = useState("Fine");
-//     const [responseData, setResponseData] = useState([]);
-
-//     useEffect(()=>{
-
-//             const getFineData = async() =>{
-//                 if(switchTab === "Offence"){
-//                     const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "witnessed")
-//                     if(response !==null && response !== undefined && response.status === 200 ) {
-//                         setResponseData(response.data);
-//                     }else{
-//                         setResponseData([]);
-//                     }
-//                 }
-//                 else if(switchTab === "Fine"){
-//                     const response = await getFinesMatchStatus(localStorage.getItem("driverId"), "accepted")
-//                     if(response !==null && response !== undefined  && response.status === 200) {
-//                         setResponseData(response.data);
-//                     }else{
-//                         setResponseData([]);
-//                     }
-//                 }
-//             }
-
-//         getFineData();
-//     },[switchTab])
-
-//     // card click function
-
-//     return (
-//         <div className="container">
-//             <HeaderBox headertext={"Alerts"}/>
-
-//             <div  style={{background: switchTab === "Fine" ? 'linear-gradient(to right, rgb(128, 188, 236), transparent)' : 'linear-gradient(to left, rgb(128, 188, 236), transparent)'}} className='page-content-new'>
-
-//                 <div className='new-tab-navigation-area'>
-//                     <div className='new-tab-container'>
-//                         <div className={switchTab==="Offense"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Offence")}}>Offense</div>
-//                         <div className={switchTab==="Fine"?"tab gray-new":"tab-new"} onClick={()=>{setSwitchTab("Fine")}}>Fine</div>
-//                     </div>
-//                 </div>
-
-//                 <div className='new-data-view'>
-//                     {<div className="new-offense">
-//                         {/* Offense data display here. */}
-//                         {responseData.map(fine =>(
-//                                 <Card key={fine.fineId} subject={fine.fineDate} message={fine.fineName}/>
-//                         ))}
-//                     </div>
-//                     }
-
-//                 </div>
-
-//             </div>
-
-//             <TabNavigation bgnew={"rgb(10, 55, 202)"}/>
-//         </div>
-//      );
-// }
-
-// export default New;
-
-//My (Shashika) original code
-
 import "./New.css";
 import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
@@ -81,6 +5,9 @@ import { useEffect, useState } from "react";
 import Card from "../../components/objects/Card/Card";
 import DetailBox from "../../components/objects/DetailBox/DetailBox";
 import { getFinesMatchStatus } from "../../middleware/driverApis/alertApis";
+import AlertCard from "../../components/objects/AlertCard/AlertCard";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const New = () => {
   const [switchTab, setSwitchTab] = useState("Fine");
@@ -92,12 +19,13 @@ const New = () => {
   //Handle Display Detail Box - Offence
   const handleOpenDetailBoxOffence = () => {
     setShowDetailBoxOffence(true);
-    
   };
 
   //Accept button action - Display box - offence
-  const handleAcceptButtonOffence = () => {
+  const handleAcceptButtonOffence = (fineId) => {
     setShowDetailBoxOffence(false);
+    console.log("called the function");
+    console.log(fineId);
   };
 
   //Reject button action - Display box - offence
@@ -160,7 +88,6 @@ const New = () => {
     getFineData();
   }, [switchTab]);
 
-console.log(responseData)
   // card click function
   return (
     <div className="container">
@@ -204,30 +131,15 @@ console.log(responseData)
               {/* Offense data display here. */}
               {responseData.map((fine) => (
                 <div key={fine.fineId}>
-                  <Card
-                    subject={fine.fineDate}
-                    message={fine.fineName}
-                    message2={fine.fineDescription}
-                    message3={"Detail 3"}
-                    message4={"Detail 4"}
-                    message5={"Detail 5"}
-                    okname={"Accept"}
-                    cancelname={"Reject"}
-                    msgtextcolor={"Black"}
-                    msgbgcolor={"rgb(181, 181, 181)"}
-                  />{" "}
-                  {/*for Offences*/}
-                  <DetailBox
-                    show={showDetailBoxOffence}
-                    title={fine.fineName}
-                    details={fine.fineDescription}
+                  <AlertCard
+                    fineName={fine.fineName}
+                    fineDate={fine.fineDate}
+                    fineAmount={fine.fineAmount}
+                    fineDescription={fine.fineDescription}
                     fineId={fine.fineId}
-                    onAccept={handleAcceptButtonOffence}
-                    onReject={handleRejectButtonOffence}
                   />
                 </div>
               ))}
-
             </div>
           )}
 
@@ -250,19 +162,21 @@ console.log(responseData)
                     title={fine.fineName}
                     details={fine.fineDescription}
                     fineId={fine.fineId}
-                    onAccept={handleAcceptButtonOffence}
+                    onAccept={() => {
+                      handleAcceptButtonOffence(fine.fineId);
+                    }}
                     onReject={handleRejectButtonOffence}
                   />
                 </div>
               ))}
-              ;
-              {/* Offense data display here. */}
+              ;{/* Offense data display here. */}
             </div>
           )}
         </div>
       </div>
 
       <TabNavigation bgnew={"rgb(10, 55, 202)"} />
+      <ToastContainer/>
     </div>
   );
 };
