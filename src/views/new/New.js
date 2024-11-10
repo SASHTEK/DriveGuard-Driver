@@ -160,7 +160,6 @@ const New = () => {
     getFineData();
   }, [switchTab]);
 
-  console.log(responseData);
 
   // card click function
   return (
