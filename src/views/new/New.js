@@ -211,6 +211,8 @@ const New = () => {
                     message3={"Detail 3"}
                     message4={"Detail 4"}
                     message5={"Detail 5"}
+                    okname={"Accept"}
+                    cancelname={"Reject"}
                     msgtextcolor={"Black"}
                     msgbgcolor={"rgb(181, 181, 181)"}
                   />{" "}
