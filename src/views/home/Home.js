@@ -2,7 +2,7 @@ import "./Home.css";
 import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import CounterBox from "../../components/objects/CounterBox/CounterBox";
-import Card from "../../components/objects/Card/Card";
+import MiniCard from "../../components/objects/MiniCard/MiniCard";
 import SmartCard from "../../components/objects/SmartCard/SmartCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -168,7 +168,7 @@ const Home = () => {
         </div>
 
         <div className="user-recommendation">
-          <Card
+          <MiniCard
             subject={recommendation.subject}
             message={recommendation.message}
             subbgcolor={recommendation.subbgcolor}
