@@ -4,13 +4,13 @@ import axios from "axios";
 const backendUrl = process.env.REACT_APP_BACKEND_API_URL;
 
 // for history page - will retrive all historical data of driver - 7th endpoint in document
-const getHistory = async (driverId) => {
+const getHistory = async (driverId, fineStatus) => {
   try {
     const response = await axios.get(
-      `${backendUrl}/fine/get/driverHistory`,
+      `${backendUrl}/fine/get/fineStatus`,
       {
         params: {
-          driverId,
+          driverId,fineStatus
         },
       },
       {
@@ -20,7 +20,7 @@ const getHistory = async (driverId) => {
       }
     );
 
-    return response;
+    return response.data;
   } catch (err) {
     console.error("Error calling backend API: ", err);
   }
