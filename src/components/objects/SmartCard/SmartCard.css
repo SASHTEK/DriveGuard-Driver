@@ -22,14 +22,14 @@
 
 .smart-card-title{
     width: 90%;
-    height: 30%;
+    height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 5px;
+    border-radius: 50px;
     color: white;
     background: goldenrod;
 }
@@ -41,7 +41,7 @@
     align-items: left;
     text-align: left;
     overflow: hidden;
-    color:rgb(78, 75, 75);
+    color:rgb(53, 50, 50);
 }
 
 .smart-card-value{
