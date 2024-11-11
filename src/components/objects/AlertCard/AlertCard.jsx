@@ -1,8 +1,12 @@
 import React from "react";
 import "./alert-card.css";
-import { acceptFine } from "../../../middleware/driverApis/alertApis";
-import { ToastContainer, toast, Bounce } from 'react-toastify';
-
+import {
+  acceptFine,
+  rejectFine,
+  makePayment,
+} from "../../../middleware/driverApis/alertApis";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+const driverId = parseInt(localStorage.getItem("driverId"), 10);
 
 const AlertCard = ({
   fineName,
@@ -10,54 +14,135 @@ const AlertCard = ({
   fineAmount,
   fineDescription,
   fineId,
+  location,
+  fineListId,
 }) => {
   // accept fine
-  const acceptingFine = async(fineId) => {
+  const acceptingFine = async (fineId) => {
     const loading = toast.loading("Accepting Offense");
-    try{
-        const response = await acceptFine(fineId);
-        console.log(response)
-        if(response.status === 200){
-          toast.update(loading, {
-            render: "Offence Accepted!",
-            type: "success",
-            isLoading: false,
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          });
-        }else{
-          toast.update(loading, {
-            render: "Offence Accept Faild",
-            type: "success",
-            isLoading: false,
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          });
-        }
-       
-
-    }catch(err){
-        console.error("Error fetcing data", err)
+    try {
+      const response = await acceptFine(fineId);
+      if (response.status === 200) {
+        toast.update(loading, {
+          render: "Offence Accepted!",
+          type: "success",
+          isLoading: false,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      } else {
+        toast.update(loading, {
+          render: "Offence Accept Faild",
+          type: "error",
+          isLoading: false,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (err) {
+      console.error("Error fetcing data", err);
     }
-  
   };
 
   //reject fine
-  const rejectFine = (rejectFine) => {};
+  const rejectingFine = async(fineId) => {
+    const loading = toast.loading("Rejecting Offense");
+    try{
+      const response =  await rejectFine(fineId);
+      // UI response
+      if (response.status === 200) {
+        toast.update(loading, {
+          render: "Rejection Successful",
+          type: "success",
+          isLoading: false,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      } else {
+        toast.update(loading, {
+          render: "Rejection Error",
+          type: "error",
+          isLoading: false,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+
+    }catch(err){
+      console.error("Error Rejecting Fine: ", err);
+    }
+  };
+
+  // make payment
+  const makingPayment = async (fineId, driverId, fineListId) => {
+    
+    const loading = toast.loading("Making Payment");
+    try {
+      const response = await makePayment(fineId, driverId, fineListId);
+      // UI response
+      if (response.status === 200) {
+        toast.update(loading, {
+          render: "Payment Successful",
+          type: "success",
+          isLoading: false,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      } else {
+        toast.update(loading, {
+          render: "Payment Error",
+          type: "error",
+          isLoading: false,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (err) {
+      console.error("error backend request: ", err);
+    }
+  };
 
   return (
     <>
@@ -75,21 +160,35 @@ const AlertCard = ({
         {/* second row */}
         <div className="ac-sr-container cf-para">{fineDescription}</div>
         {/* thrid row */}
-        <div className="ac-tr-container">
-          <button
-            className="button-common acc-button"
-            onClick={() => {
-              acceptingFine(fineId);
-            }}
-          >
-            Accept
-          </button>
-          <button className="button-common rej-button">Reject</button>
-        </div>
-        <ToastContainer/>
+        {location === "offense" ? (
+          <div className="ac-tr-container">
+            <button
+              className="button-common acc-button"
+              onClick={() => {
+                acceptingFine(fineId);
+              }}
+            >
+              Accept
+            </button>
+            <button className="button-common rej-button" onClick={()=>{rejectingFine(fineId)}}>Reject</button>
+          </div>
+        ) : (
+          <div className="ac-tr-container">
+            <button
+              className="button-common rej-button"
+              onClick={() => {
+                makingPayment(fineId, driverId, fineListId);
+              }}
+            >
+              Make Payment
+            </button>
+          </div>
+        )}
+
+        <ToastContainer />
       </div>
     </>
-  );
+  )
 };
 
 export default AlertCard;

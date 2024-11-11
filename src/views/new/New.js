@@ -24,8 +24,6 @@ const New = () => {
   //Accept button action - Display box - offence
   const handleAcceptButtonOffence = (fineId) => {
     setShowDetailBoxOffence(false);
-    console.log("called the function");
-    console.log(fineId);
   };
 
   //Reject button action - Display box - offence
@@ -137,6 +135,8 @@ const New = () => {
                     fineAmount={fine.fineAmount}
                     fineDescription={fine.fineDescription}
                     fineId={fine.fineId}
+                    location="offense"
+                    fineListId = {fine.fineListId}
                   />
                 </div>
               ))}
@@ -150,26 +150,18 @@ const New = () => {
               {/* Fine data display here. */}
               {responseData.map((fine) => (
                 <div key={fine.fineId}>
-                  <Card
-                    subject={fine.fineDate}
-                    message={fine.fineName}
-                    msgbgcolor={"rgb(205, 150, 13)"}
-                    onClick={handleOpenDetailBoxOffence}
-                  />{" "}
-                  {/*for Offences*/}
-                  <DetailBox
-                    show={showDetailBoxOffence}
-                    title={fine.fineName}
-                    details={fine.fineDescription}
-                    fineId={fine.fineId}
-                    onAccept={() => {
-                      handleAcceptButtonOffence(fine.fineId);
-                    }}
-                    onReject={handleRejectButtonOffence}
-                  />
-                </div>
+                <AlertCard
+                  fineName={fine.fineName}
+                  fineDate={fine.fineDate}
+                  fineAmount={fine.fineAmount}
+                  fineDescription={fine.fineDescription}
+                  fineId={fine.fineId}
+                  location='fine'
+                  fineListId = {fine.fineListId}
+                />
+              </div>
               ))}
-              ;{/* Offense data display here. */}
+              {/* Offense data display here. */}
             </div>
           )}
         </div>

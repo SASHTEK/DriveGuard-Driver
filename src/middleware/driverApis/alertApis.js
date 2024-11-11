@@ -79,7 +79,8 @@ const getFinesMatchStatus = async (driverId, fineStatus) => {
       `${backendUrl}/fine/get/fineStatus`,
       {
         params: {
-          driverId,fineStatus
+          driverId,
+          fineStatus,
         },
       },
       {
@@ -95,15 +96,15 @@ const getFinesMatchStatus = async (driverId, fineStatus) => {
   }
 };
 
-
 // for make payment - will change fine status to paid and decrese offence level - 5th endpoint in document
-const makePayment = async (username, password) => {
+const makePayment = async (fineId, driverId, fineListId) => {
   try {
-    const response = await axios.get(
-      `${backendUrl}/driver/makePayment`,
+    const response = await axios.post(
+      `${backendUrl}/fine/makePayment`,
       {
-        username: username,
-        password: password,
+        fineId: fineId,
+        driverId: driverId,
+        fineListId: fineListId,
       },
       {
         headers: {
@@ -125,7 +126,7 @@ const acceptFine = async (fineId) => {
       `${backendUrl}/fine/acceptFine`,
       {
         params: {
-          fineId
+          fineId,
         },
       },
       {
@@ -141,4 +142,35 @@ const acceptFine = async (fineId) => {
   }
 };
 
-export { getOffenceData, getFinesData, getFine, makePayment,getFinesMatchStatus, acceptFine };
+// reject fine
+const rejectFine = async (fineId) => {
+  try {
+    const response = await axios.get(
+      `${backendUrl}/fine/rejectFine`,
+      {
+        params: {
+          fineId,
+        },
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return response;
+  } catch (err) {
+    console.error("Error calling backend API: ", err);
+  }
+};
+
+export {
+  getOffenceData,
+  getFinesData,
+  getFine,
+  makePayment,
+  getFinesMatchStatus,
+  acceptFine,
+  rejectFine
+};
