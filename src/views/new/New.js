@@ -95,8 +95,8 @@ const New = () => {
         style={{
           background:
             switchTab === "Fine"
-              ? "linear-gradient(to right, rgb(128, 188, 236), transparent)"
-              : "linear-gradient(to left, rgb(128, 188, 236), transparent)",
+              ? "linear-gradient(to right, rgb(107, 29, 231), transparent)"
+              : "linear-gradient(to left, rgb(107, 29, 231), transparent)",
         }}
         className="page-content-new"
       >

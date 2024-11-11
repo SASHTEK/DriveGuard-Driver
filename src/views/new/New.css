@@ -31,8 +31,8 @@
     width: 150px;
     height: 45px;
     color: rgb(255, 255, 255);
-    background: rgb(5, 16, 179);
-    border-radius: 5px;
+    background: rgb(4, 11, 118);
+    border-radius: 50px;
     font-size: 15px;
     font-weight: 500;
     cursor: pointer;
@@ -42,6 +42,7 @@
 .gray-new{
     background: rgb(92, 100, 214);
     color: rgb(209, 205, 205);
+    border-radius: 50px;
 }
 
 .new-data-view{

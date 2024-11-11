@@ -110,9 +110,7 @@ const History = () => {
                       message={historyDatum.fineName}
                       message2={historyDatum.fineDescription}
                       message3={historyDatum.fineAmount}
-                      msgtextcolor={"Black"}
-                      msgbgcolor={"rgb(181, 181, 181)"}
-                    />
+                     />
                   </div>
                 ))}
  
