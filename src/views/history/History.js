@@ -11,11 +11,12 @@ import DataCard from "../../components/objects/DataCard/DataCard";
 
 // Browse History List
 const options = [
-  { value: "", label: "Select offense type..." },
-  { value: "Fine pay", label: "Fine pay" },
-  { value: "Offense 1", label: "Offense 1" },
-  { value: "Offenses 2", label: "Offenses 2" },
-  { value: "Offenses 3", label: "Offenses 3" },
+  { value: 0, label: "Select offense type..." },
+  { value: 1, label: "Speeding" },
+  { value: 2, label: "Red Light Violation" },
+  { value: 3, label: "Illegal Parking" },
+  { value: 4, label: "No License" },
+  { value: 5, label: "Pedestrian Crossing Violation" },
 ];
 
 const History = () => {
@@ -35,6 +36,12 @@ const History = () => {
   const handleToDateChange = (date) => {
     setToDate(date);
   };
+
+  //handle-history-search button click
+  const handleHistorySearchButtonClick = () => {
+    
+  };
+
   const driverId = localStorage.getItem("driverId");
   const status = "paid";
 
@@ -95,7 +102,7 @@ const History = () => {
                   </option>
                 ))}
               </select>
-              <button>Browse</button>
+              <button className="handle-history-search" onClick={handleHistorySearchButtonClick}>Search</button>
             </div>
           </div>
 
