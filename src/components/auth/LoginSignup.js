@@ -25,15 +25,16 @@ const LoginSignup = () => {
     // login function
     const login = async (username, password) => {
         try {
-            // Check if username and password are provided
             if (username && password) {
                 const response = await driverLogin(username, password);
-                if(response !== undefined){
+                if(response !== undefined) {
                     if (response.status === 200) {
                         const userId = response.data.driverId; 
                         localStorage.setItem('driverId', userId);
                         navigate('/home');
-                    } 
+                    }
+                } else {
+                    setAlertMessage("Incorrect Username or Password!");
                 }
             } else {
                 console.log("Username and Password are required.");
@@ -41,10 +42,10 @@ const LoginSignup = () => {
             }
         } catch (err) {
             console.error("Error calling backend login function: ", err);
-            setAlertMessage("Incorrect Username or Password!");
+            setAlertMessage("Login failed due to an error. Please try again.");
         }
     };
-
+    
 
     // Handle Sign Up Button Action
     const handleSignUp = () => {
