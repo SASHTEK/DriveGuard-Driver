@@ -11,12 +11,12 @@ import DataCard from "../../components/objects/DataCard/DataCard";
 
 // Browse History List
 const options = [
-  { value: 0, label: "Select offense type..." },
-  { value: 1, label: "Speeding" },
-  { value: 2, label: "Red Light Violation" },
-  { value: 3, label: "Illegal Parking" },
-  { value: 4, label: "No License" },
-  { value: 5, label: "Pedestrian Crossing Violation" },
+  { value: "", label: "Select offense type..." },
+  { value: "Speeding", label: "Speeding" },
+  { value: "Red Light Violation", label: "Red Light Violation" },
+  { value: "Illegal Parking", label: "Illegal Parking" },
+  { value: "No License", label: "No License" },
+  { value: "Pedestrian Crossing Violation", label: "Pedestrian Crossing Violation" },
 ];
 
 const History = () => {
@@ -24,6 +24,7 @@ const History = () => {
   const [selectedOption, setSelectedOption] = useState(options[0].value);
   //   data saved array
   const [histroyData, setHistoryData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   // Date Time Picker
   const [fromDate, setFromDate] = useState(new Date());
@@ -39,7 +40,15 @@ const History = () => {
 
   //handle-history-search button click
   const handleHistorySearchButtonClick = () => {
-    
+    const filtered = histroyData.filter((historyDatum) => {
+      const fineDate = new Date(historyDatum.fineDate);
+      return (
+        fineDate >= fromDate &&
+        fineDate <= toDate &&
+        (selectedOption === "" || historyDatum.fineName === selectedOption)
+      );
+    });
+    setFilteredData(filtered);
   };
 
   const driverId = localStorage.getItem("driverId");
@@ -68,12 +77,6 @@ const History = () => {
       <HeaderBox headertext={"Offense History"} />
 
       <div className="page-content-history">
-        {/* <div className="indicator">
-          <h2>Offense Summary</h2>
-          <div className="offense-summary">
-          </div>
-        </div> */}
-
         <div className="history-list-view">
           <h2>Browse History</h2>
           <div className="history-list-components">
@@ -109,18 +112,20 @@ const History = () => {
           <div className="history-list-display">
             <div className="history-list-display-box">
               {/* Display history list here */}
-   
-                {histroyData.map((historyDatum) => (
-                  <div>
+              {filteredData.length > 0 ? (
+                filteredData.map((historyDatum) => (
+                  <div key={historyDatum.id}>
                     <DataCard
                       subject={historyDatum.fineDate}
                       message={historyDatum.fineName}
                       message2={historyDatum.fineDescription}
                       message3={historyDatum.fineAmount}
-                     />
+                    />
                   </div>
-                ))}
- 
+                ))
+              ) : (
+                <div className="no-result">No result</div>
+              )}
             </div>
           </div>
         </div>
