@@ -52,7 +52,7 @@
 }
 
 .new-offense{
-    margin: 0 auto 10em auto;
+    margin: auto;
     width: 90%;
     min-height: 650px;
     max-height: 651px;
@@ -62,7 +62,7 @@
 }
 
 .new-fine{
-    margin: 0 auto 10em auto;
+    margin: auto;
     width: 90%;
     min-height: 650px;
     max-height: 651px;
