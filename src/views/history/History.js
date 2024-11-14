@@ -1,9 +1,8 @@
 import "./History.css";
+import "./DatePickerCustom.css";
 import React, { useEffect, useState } from "react";
-import DateTimePicker from "react-datetime-picker";
-import "react-datetime-picker/dist/DateTimePicker.css";
-import "react-calendar/dist/Calendar.css";
-import "react-clock/dist/Clock.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { getHistory } from "../../middleware/driverApis/historyApis";
@@ -26,14 +25,11 @@ const History = () => {
   // Select Offenses
   const [selectedOption, setSelectedOption] = useState(options[0].value);
   //   data saved array
-  const [histroyData, setHistoryData] = useState([]);
+  const [historyData, setHistoryData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
-  // Date Time Picker
-  const today = new Date();
-  const [fromDate, setFromDate] = useState(
-    today.setFullYear(today.getFullYear() - 1)
-  );
+  // Date Picker
+  const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
 
   const handleFromDateChange = (date) => {
@@ -43,7 +39,19 @@ const History = () => {
   const handleToDateChange = (date) => {
     setToDate(date);
   };
-  console.log(toDate);
+
+  //handle-history-search button click
+  const handleHistorySearchButtonClick = () => {
+    const filtered = historyData.filter((historyDatum) => {
+      const fineDate = new Date(historyDatum.fineDate);
+      return (
+        fineDate >= fromDate &&
+        fineDate <= toDate &&
+        (selectedOption === "" || historyDatum.fineName === selectedOption)
+      );
+    });
+    setFilteredData(filtered);
+  };
 
   const driverId = localStorage.getItem("driverId");
   const status = "paid";
@@ -56,7 +64,7 @@ const History = () => {
         if (response !== null && response !== undefined) {
           setHistoryData(response);
 
-          if (histroyData) {
+          if (historyData) {
             handleHistorySearchButtonClick();
           }
         } else {
@@ -70,19 +78,7 @@ const History = () => {
     fetchHistory();
   }, []);
 
-  //handle-history-search button click
-  const handleHistorySearchButtonClick = () => {
-    console.log("call the function");
-    const filtered = histroyData.filter((historyDatum) => {
-      const fineDate = new Date(historyDatum.fineDate);
-      return (
-        fineDate >= fromDate &&
-        fineDate <= toDate &&
-        (selectedOption === "" || historyDatum.fineName === selectedOption)
-      );
-    });
-    setFilteredData(filtered);
-  };
+  
 
   return (
     <div className="container">
@@ -95,14 +91,21 @@ const History = () => {
             <div className="history-list-components-date-range">
               <div className="history-list-components-date-range-from">
                 <label>From:</label>
-                <DateTimePicker
-                  value={fromDate}
+                <DatePicker
+                  selected={fromDate}
                   onChange={handleFromDateChange}
+                  dateFormat="yyyy/MM/dd"
+                  className="custom-date-picker"
                 />
               </div>
               <div className="history-list-components-date-range-to">
                 <label>To:</label>
-                <DateTimePicker value={toDate} onChange={handleToDateChange} />
+                <DatePicker
+                  selected={toDate}
+                  onChange={handleToDateChange}
+                  dateFormat="yyyy/MM/dd"
+                  className="custom-date-picker"
+                />
               </div>
             </div>
 
