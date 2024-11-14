@@ -16,7 +16,12 @@ const AlertCard = ({
   fineId,
   location,
   fineListId,
-  officerFirstName, officerLastName
+  officerFirstName,
+  officerLastName,
+  officerPoliceId,
+  witnessedOfficerFirstName,
+  witnessedOfficerLastName,
+  witnessedOfficerPoliceId
 }) => {
   // accept fine
   const acceptingFine = async (fineId) => {
@@ -60,10 +65,10 @@ const AlertCard = ({
   };
 
   //reject fine
-  const rejectingFine = async(fineId) => {
+  const rejectingFine = async (fineId) => {
     const loading = toast.loading("Rejecting Offense");
-    try{
-      const response =  await rejectFine(fineId);
+    try {
+      const response = await rejectFine(fineId);
       // UI response
       if (response.status === 200) {
         toast.update(loading, {
@@ -96,15 +101,13 @@ const AlertCard = ({
           transition: Bounce,
         });
       }
-
-    }catch(err){
+    } catch (err) {
       console.error("Error Rejecting Fine: ", err);
     }
   };
 
   // make payment
   const makingPayment = async (fineId, driverId, fineListId) => {
-    
     const loading = toast.loading("Making Payment");
     try {
       const response = await makePayment(fineId, driverId, fineListId);
@@ -159,10 +162,21 @@ const AlertCard = ({
           <div className="cf-heading"> {fineAmount} </div>
         </div>
         {/* second row */}
-        <div className="ac-sr-container cf-para">{fineDescription}
+        <div className="ac-sr-container cf-para">
+          {fineDescription}
+          <div className="fo-data-container">
+            <p className="card-subheading">Finned Officer</p>
+            <p>{`Officer Id: ${officerPoliceId}`}</p>
+            <p>{`NAME: ${officerFirstName} ${officerLastName}`}</p>
+          </div>
+          <div className="wo-data-container">
+            <p className="card-subheading">Witnessed Officer</p>
+            <p>{`Officer Id: ${witnessedOfficerPoliceId}`}</p>
+            <p>{`NAME: ${witnessedOfficerFirstName} ${witnessedOfficerLastName}`}</p>
 
-          <p>Officer Name : {`${officerFirstName} ${officerLastName}`}</p>
+          </div>
         </div>
+
         {/* thrid row */}
         {location === "offense" ? (
           <div className="ac-tr-container">
@@ -174,7 +188,14 @@ const AlertCard = ({
             >
               Accept
             </button>
-            <button className="button-common rej-button" onClick={()=>{rejectingFine(fineId)}}>Reject</button>
+            <button
+              className="button-common rej-button"
+              onClick={() => {
+                rejectingFine(fineId);
+              }}
+            >
+              Reject
+            </button>
           </div>
         ) : (
           <div className="ac-tr-container">
@@ -192,7 +213,7 @@ const AlertCard = ({
         <ToastContainer />
       </div>
     </>
-  )
+  );
 };
 
 export default AlertCard;
