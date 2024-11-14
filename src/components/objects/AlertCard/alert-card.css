@@ -8,6 +8,10 @@
   font-size: 1.5rem;
 }
 
+.card-subheading{
+  font-weight: 600;
+}
+
 .cf-para {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
@@ -48,6 +52,19 @@
     padding: 0.3em 1em;
     width: fit-content;
     border-radius: 0.9em;
+  }
+
+  .fo-data-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0.75em 0.2em;
+  }
+
+  .wo-data-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.2em;
+
   }
   .ac-tr-container {
     display: flex;

@@ -6,8 +6,8 @@ import Card from "../../components/objects/Card/Card";
 import DetailBox from "../../components/objects/DetailBox/DetailBox";
 import { getFinesMatchStatus } from "../../middleware/driverApis/alertApis";
 import AlertCard from "../../components/objects/AlertCard/AlertCard";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const New = () => {
   const [switchTab, setSwitchTab] = useState("Fine");
@@ -63,6 +63,7 @@ const New = () => {
           response.status === 200
         ) {
           setResponseData(response.data);
+          console.log(response.data);
         } else {
           setResponseData([]);
         }
@@ -77,6 +78,7 @@ const New = () => {
           response.status === 200
         ) {
           setResponseData(response.data);
+          console.log(response.data);
         } else {
           setResponseData([]);
         }
@@ -136,7 +138,13 @@ const New = () => {
                     fineDescription={fine.fineDescription}
                     fineId={fine.fineId}
                     location="offense"
-                    fineListId = {fine.fineListId}
+                    fineListId={fine.fineListId}
+                    officerFirstName={fine.officerFirstName}
+                    officerLastName={fine.officerLastName}
+                    officerPoliceId={fine.officerId}
+                    witnessedOfficerFirstName={fine.witnessedOfficerFirstName}
+                    witnessedOfficerLastNamee={fine.withnessedOfficerLastName}
+                    witnessedOfficerPoliceId={fine.witnessedOfficerId}
                   />
                 </div>
               ))}
@@ -150,16 +158,22 @@ const New = () => {
               {/* Fine data display here. */}
               {responseData.map((fine) => (
                 <div key={fine.fineId}>
-                <AlertCard
-                  fineName={fine.fineName}
-                  fineDate={fine.fineDate}
-                  fineAmount={fine.fineAmount}
-                  fineDescription={fine.fineDescription}
-                  fineId={fine.fineId}
-                  location='fine'
-                  fineListId = {fine.fineListId}
-                />
-              </div>
+                  <AlertCard
+                    fineName={fine.fineName}
+                    fineDate={fine.fineDate}
+                    fineAmount={fine.fineAmount}
+                    fineDescription={fine.fineDescription}
+                    fineId={fine.fineId}
+                    location="fine"
+                    fineListId={fine.fineListId}
+                    officerFirstName={fine.officerFirstName}
+                    officerLastName={fine.officerLastName}
+                    officerPoliceId={fine.officerId}
+                    witnessedOfficerFirstName={fine.witnessedOfficerFirstName}
+                    witnessedOfficerLastName={fine.witnessedOfficerLastName}
+                    witnessedOfficerPoliceId={fine.witnessedOfficerId}
+                  />
+                </div>
               ))}
               {/* Offense data display here. */}
             </div>
@@ -168,7 +182,7 @@ const New = () => {
       </div>
 
       <TabNavigation bgnew={"rgb(10, 55, 202)"} />
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };
