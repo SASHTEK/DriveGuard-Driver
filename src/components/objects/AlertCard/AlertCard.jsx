@@ -16,6 +16,7 @@ const AlertCard = ({
   fineId,
   location,
   fineListId,
+  officerFirstName, officerLastName
 }) => {
   // accept fine
   const acceptingFine = async (fineId) => {
@@ -158,7 +159,10 @@ const AlertCard = ({
           <div className="cf-heading"> {fineAmount} </div>
         </div>
         {/* second row */}
-        <div className="ac-sr-container cf-para">{fineDescription}</div>
+        <div className="ac-sr-container cf-para">{fineDescription}
+
+          <p>Officer Name : {`${officerFirstName} ${officerLastName}`}</p>
+        </div>
         {/* thrid row */}
         {location === "offense" ? (
           <div className="ac-tr-container">

@@ -57,6 +57,7 @@ const New = () => {
           localStorage.getItem("driverId"),
           "witnessed"
         );
+        console.log(response)
         if (
           response !== null &&
           response !== undefined &&
@@ -71,6 +72,7 @@ const New = () => {
           localStorage.getItem("driverId"),
           "accepted"
         );
+
         if (
           response !== null &&
           response !== undefined &&
@@ -137,6 +139,8 @@ const New = () => {
                     fineId={fine.fineId}
                     location="offense"
                     fineListId = {fine.fineListId}
+                    officerFirstName = {fine.officerFirstName}
+                    officerLastName = {fine.officerLastName}
                   />
                 </div>
               ))}

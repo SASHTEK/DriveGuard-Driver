@@ -16,7 +16,10 @@ const options = [
   { value: "Red Light Violation", label: "Red Light Violation" },
   { value: "Illegal Parking", label: "Illegal Parking" },
   { value: "No License", label: "No License" },
-  { value: "Pedestrian Crossing Violation", label: "Pedestrian Crossing Violation" },
+  {
+    value: "Pedestrian Crossing Violation",
+    label: "Pedestrian Crossing Violation",
+  },
 ];
 
 const History = () => {
@@ -27,7 +30,10 @@ const History = () => {
   const [filteredData, setFilteredData] = useState([]);
 
   // Date Time Picker
-  const [fromDate, setFromDate] = useState(new Date());
+  const today = new Date();
+  const [fromDate, setFromDate] = useState(
+    today.setFullYear(today.getFullYear() - 1)
+  );
   const [toDate, setToDate] = useState(new Date());
 
   const handleFromDateChange = (date) => {
@@ -37,19 +43,7 @@ const History = () => {
   const handleToDateChange = (date) => {
     setToDate(date);
   };
-
-  //handle-history-search button click
-  const handleHistorySearchButtonClick = () => {
-    const filtered = histroyData.filter((historyDatum) => {
-      const fineDate = new Date(historyDatum.fineDate);
-      return (
-        fineDate >= fromDate &&
-        fineDate <= toDate &&
-        (selectedOption === "" || historyDatum.fineName === selectedOption)
-      );
-    });
-    setFilteredData(filtered);
-  };
+  console.log(toDate);
 
   const driverId = localStorage.getItem("driverId");
   const status = "paid";
@@ -61,6 +55,10 @@ const History = () => {
         const response = await getHistory(driverId, status);
         if (response !== null && response !== undefined) {
           setHistoryData(response);
+
+          if (histroyData) {
+            handleHistorySearchButtonClick();
+          }
         } else {
           console.error("History data empty or null");
         }
@@ -71,6 +69,20 @@ const History = () => {
 
     fetchHistory();
   }, []);
+
+  //handle-history-search button click
+  const handleHistorySearchButtonClick = () => {
+    console.log("call the function");
+    const filtered = histroyData.filter((historyDatum) => {
+      const fineDate = new Date(historyDatum.fineDate);
+      return (
+        fineDate >= fromDate &&
+        fineDate <= toDate &&
+        (selectedOption === "" || historyDatum.fineName === selectedOption)
+      );
+    });
+    setFilteredData(filtered);
+  };
 
   return (
     <div className="container">
@@ -105,7 +117,12 @@ const History = () => {
                   </option>
                 ))}
               </select>
-              <button className="handle-history-search" onClick={handleHistorySearchButtonClick}>Search</button>
+              <button
+                className="handle-history-search"
+                onClick={handleHistorySearchButtonClick}
+              >
+                Search
+              </button>
             </div>
           </div>
 
