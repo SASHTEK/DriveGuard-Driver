@@ -7,7 +7,9 @@
 }
 
 .minicard-subject{
+    font-family: "Montserrat", serif;
     background: rgb(240, 236, 236);
+    font-weight: 300;
     width: auto;
     min-height: 30px;
     height: auto;
@@ -15,12 +17,14 @@
     justify-content: center;
     align-items: center;
     color: green;
-    font-weight: 500;
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .minicard-message{
+    font-family: "Montserrat", serif;
+    font-weight:400;
     Background: rgb(15, 107, 6);
     width: auto;
     color: white;

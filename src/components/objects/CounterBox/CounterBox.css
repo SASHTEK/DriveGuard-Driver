@@ -12,11 +12,13 @@
 }
 
 .counter-box-text {
+    font-family: "Montserrat", serif;
     color: rgb(34, 32, 32);
     font-weight: 500;
 }
 
 .counter-box-number {
+    font-family: "Montserrat", serif;
     Background: rgb(42, 26, 224);
     width: 40px;
     height: 40px;

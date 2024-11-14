@@ -144,7 +144,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <HeaderBox headertext={"DriveGuard Home"} />
+      <HeaderBox headertext={"Your Summary"} />
 
       <div
         style={{ background: recommendation.pagecolor }}
