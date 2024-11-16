@@ -97,7 +97,7 @@
 
 .history-list-components-select-items select{
     font-family: "Montserrat", serif;
-    width: fit-content;
+    width: 90%;
     padding: 1em;
     height: fit-content;
     border-radius: 2em;

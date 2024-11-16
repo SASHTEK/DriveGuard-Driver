@@ -12,14 +12,15 @@ import AlertCard from "../../components/objects/AlertCard/AlertCard";
 // Browse History List
 const options = [
   { value: "", label: "Select offense type..." },
-  { value: "Speeding", label: "Speeding" },
-  { value: "Red Light Violation", label: "Red Light Violation" },
-  { value: "Illegal Parking", label: "Illegal Parking" },
-  { value: "No License", label: "No License" },
-  {
-    value: "Pedestrian Crossing Violation",
-    label: "Pedestrian Crossing Violation",
-  },
+  { value: "Failure to carry Emission Certificate", label: "Failure to carry Emission Certificate" },
+  { value: "Issues with Identification Plates", label: "Issues with Identification Plates" },
+  { value: "Not Carrying Driving License", label: "Not Carrying Driving License" },
+  { value: "No-use of seat belts", label: "No-use of seat belts" },
+  {value: "Contravening Speed Limits",label: "Contravening Speed Limits"},
+  {value: "Driving without a license",label: "Driving without a license"},
+  {value: "Driving under the influence of liquor / narcotics",label: "Driving under the influence of liquor / narcotics"},
+  {value: "Driving without a valid insurance cover",label: "Driving without a valid insurance cover"},
+  {value: "Causing injuries / death to a person while driving under the influence of liquor",label: "Causing injuries / death to a person while driving under the influence of liquor"}
 ];
 
 const History = () => {
