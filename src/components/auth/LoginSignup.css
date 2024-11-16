@@ -7,6 +7,7 @@
 }
 
 .login-title{
+    font-family: "Montserrat", sans-serif;
     margin-top: 20%;
     text-align: center;
 }
@@ -20,6 +21,7 @@
 }
 
 .error-message{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +51,7 @@
 }
 
 .tab{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,6 +83,7 @@
 }
 
 .input{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     align-items: center;
     width: auto;
@@ -90,6 +94,7 @@
 }
 
 .input input{
+    font-family: "Montserrat", sans-serif;
     margin-left: 5%;
     height: 30px;
     width: 90%;
@@ -99,7 +104,12 @@
     font-size: 14px;
 }
 
+.input input::placeholder{
+    font-family: "Montserrat", sans-serif;
+}
+
 .forgot-password{
+    font-family: "Montserrat", sans-serif;
     margin-top: 10%;
     color: rgb(28, 29, 29);
     font-size: 14px;
@@ -107,6 +117,7 @@
 }
 
 .forgot-password span{
+    font-family: "Montserrat", sans-serif;
     color: rgb(55, 12, 96);
     cursor: pointer;
 }
@@ -118,6 +129,7 @@
 }
 
 .submit{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,10 +137,10 @@
     height: 45px;
     color: aliceblue;
     background: #54a007;
-    border-radius: 50px;
+    border-radius: 2em;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    border-color: rgb(188, 194, 188);
+    border: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

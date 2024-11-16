@@ -7,6 +7,7 @@ import HeaderBox from "../../components/objects/HeaderBox/HeaderBox";
 import TabNavigation from "../../components/navbar/TabNavigation";
 import { getHistory } from "../../middleware/driverApis/historyApis";
 import DataCard from "../../components/objects/DataCard/DataCard";
+import AlertCard from "../../components/objects/AlertCard/AlertCard";
 
 // Browse History List
 const options = [
@@ -61,6 +62,7 @@ const History = () => {
     const fetchHistory = async () => {
       try {
         const response = await getHistory(driverId, status);
+        console.log(response)
         if (response !== null && response !== undefined) {
           setHistoryData(response);
 
@@ -135,12 +137,22 @@ const History = () => {
               {filteredData.length > 0 ? (
                 filteredData.map((historyDatum) => (
                   <div key={historyDatum.id}>
-                    <DataCard
-                      subject={historyDatum.fineDate}
-                      message={historyDatum.fineName}
-                      message2={historyDatum.fineDescription}
-                      message3={historyDatum.fineAmount}
-                    />
+                      <AlertCard
+                        fineName={historyDatum.fineName}
+                        fineDate={historyDatum.fineDate}
+                        fineAmount={historyDatum.fineAmount}
+                        fineDescription={historyDatum.fineDescription}
+                        fineId={historyDatum.fineId}
+                        fineListId={historyDatum.fineListId}
+                        officerFirstName={historyDatum.officerFirstName}
+                        officerLastName={historyDatum.officerLastName}
+                        officerPoliceId={historyDatum.officerId}
+                        witnessedOfficerPoliceId={historyDatum.witnessedOfficerId}
+                        witnessedOfficerFirstName={historyDatum.witnessedOfficerFirstName}
+                        witnessedOfficerLastName={historyDatum.witnessedOfficerLastName}
+
+                      
+                      />
                   </div>
                 ))
               ) : (

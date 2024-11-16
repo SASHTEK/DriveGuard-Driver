@@ -1,5 +1,5 @@
 import React from "react";
-import "./alert-card.css";
+import './alert-card.css';
 import {
   acceptFine,
   rejectFine,
@@ -197,7 +197,7 @@ const AlertCard = ({
               Reject
             </button>
           </div>
-        ) : (
+        ) :location === "fine" ? (
           <div className="ac-tr-container">
             <button
               className="button-common rej-button"
@@ -208,7 +208,7 @@ const AlertCard = ({
               Make Payment
             </button>
           </div>
-        )}
+        ):(null)}
 
         <ToastContainer />
       </div>
